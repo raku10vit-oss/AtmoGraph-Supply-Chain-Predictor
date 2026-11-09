@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# AtmoGraph: Large dataset files (too big for standard Git)
+# SynDelay (54 MB) — see data/delay_prediction/README.md for download instructions
+data/delay_prediction/syndelay_v1.csv
+# General guard: any CSV larger than ~50 MB placed in delay_prediction/
+data/delay_prediction/*.csv
