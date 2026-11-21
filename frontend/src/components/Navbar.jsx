@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
-import { Search, Activity, AlertCircle } from 'lucide-react'
+import { Search, Activity, AlertCircle, Network, Zap } from 'lucide-react'
 
-export default function Navbar({ onSearch, neo4jStatus }) {
+export default function Navbar({ onSearch, neo4jStatus, activePage, onNavigate }) {
   const [query, setQuery] = useState('')
   const [focused, setFocused] = useState(false)
   const inputRef = useRef(null)
@@ -20,13 +20,23 @@ export default function Navbar({ onSearch, neo4jStatus }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (query.trim()) onSearch(query.trim())
+    if (query.trim()) onSearch?.(query.trim())
   }
 
   const handleClear = () => {
     setQuery('')
-    onSearch('')
+    onSearch?.('')
   }
+
+  const TAB_STYLE = (active) => ({
+    display: 'flex', alignItems: 'center', gap: 6,
+    padding: '6px 14px', borderRadius: 7, cursor: 'pointer',
+    border: 'none', fontSize: 13, fontWeight: 500,
+    background: active ? 'var(--accent-light)' : 'transparent',
+    color: active ? 'var(--accent)' : 'var(--text-secondary)',
+    transition: 'all .15s',
+    borderBottom: active ? '2px solid var(--accent)' : '2px solid transparent',
+  })
 
   return (
     <header style={{
@@ -35,7 +45,7 @@ export default function Navbar({ onSearch, neo4jStatus }) {
       background: 'var(--surface)',
       borderBottom: '1px solid var(--border)',
       display: 'flex', alignItems: 'center',
-      padding: '0 20px', gap: '20px',
+      padding: '0 20px', gap: '16px',
       boxShadow: '0 1px 0 var(--border)',
     }}>
       {/* Logo */}
@@ -60,54 +70,88 @@ export default function Navbar({ onSearch, neo4jStatus }) {
       {/* Divider */}
       <div style={{ width: 1, height: 28, background: 'var(--border)', flexShrink: 0 }} />
 
-      {/* Search */}
-      <form onSubmit={handleSubmit} style={{ flex: 1, maxWidth: 480, position: 'relative' }}>
-        <Search
-          size={15}
-          style={{
-            position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)',
-            color: focused ? 'var(--accent)' : 'var(--text-muted)',
-            transition: 'color .15s',
-          }}
-        />
-        <input
-          ref={inputRef}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          placeholder="Search companies, countries, industries…"
-          style={{
-            width: '100%', height: 36,
-            padding: '0 60px 0 34px',
-            border: `1px solid ${focused ? 'var(--accent)' : 'var(--border)'}`,
-            borderRadius: 8,
-            background: focused ? '#fff' : 'var(--surface-2)',
-            color: 'var(--text-primary)', fontSize: 13,
-            outline: 'none',
-            transition: 'border-color .15s, background .15s',
-            boxShadow: focused ? '0 0 0 3px rgba(37,99,235,.12)' : 'none',
-          }}
-        />
-        <div style={{
-          position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)',
-          display: 'flex', gap: 4,
-        }}>
-          {query && (
-            <button type="button" onClick={handleClear}
-              style={{ background: 'none', border: 'none', cursor: 'pointer',
-                       color: 'var(--text-muted)', fontSize: 16, lineHeight: 1,
-                       padding: '0 2px' }}>
-              ×
-            </button>
-          )}
-          <kbd style={{
-            padding: '2px 5px', borderRadius: 4,
-            background: 'var(--surface-2)', border: '1px solid var(--border)',
-            fontSize: 10, color: 'var(--text-muted)', fontFamily: 'inherit',
-          }}>⌘K</kbd>
-        </div>
-      </form>
+      {/* Page Tabs */}
+      <nav style={{ display: 'flex', gap: 4, flexShrink: 0 }}>
+        <button
+          id="nav-graph"
+          style={TAB_STYLE(activePage === 'graph')}
+          onClick={() => onNavigate?.('graph')}
+          onMouseEnter={e => { if (activePage !== 'graph') e.currentTarget.style.background = 'var(--surface-2)' }}
+          onMouseLeave={e => { if (activePage !== 'graph') e.currentTarget.style.background = 'transparent' }}
+        >
+          <Network size={13} />
+          Graph Explorer
+        </button>
+        <button
+          id="nav-predictions"
+          style={TAB_STYLE(activePage === 'predictions')}
+          onClick={() => onNavigate?.('predictions')}
+          onMouseEnter={e => { if (activePage !== 'predictions') e.currentTarget.style.background = 'var(--surface-2)' }}
+          onMouseLeave={e => { if (activePage !== 'predictions') e.currentTarget.style.background = 'transparent' }}
+        >
+          <Zap size={13} />
+          Risk Predictions
+          <span style={{
+            fontSize: 9, fontWeight: 700, padding: '1px 5px',
+            borderRadius: 4, background: 'linear-gradient(135deg,#2563EB,#7C3AED)',
+            color: '#fff', letterSpacing: '.05em'
+          }}>NEW</span>
+        </button>
+      </nav>
+
+      {/* Divider */}
+      <div style={{ width: 1, height: 28, background: 'var(--border)', flexShrink: 0 }} />
+
+      {/* Search — only shown on graph page */}
+      {activePage === 'graph' && (
+        <form onSubmit={handleSubmit} style={{ flex: 1, maxWidth: 420, position: 'relative' }}>
+          <Search
+            size={15}
+            style={{
+              position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)',
+              color: focused ? 'var(--accent)' : 'var(--text-muted)',
+              transition: 'color .15s',
+            }}
+          />
+          <input
+            ref={inputRef}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            placeholder="Search companies, countries, industries…"
+            style={{
+              width: '100%', height: 36,
+              padding: '0 60px 0 34px',
+              border: `1px solid ${focused ? 'var(--accent)' : 'var(--border)'}`,
+              borderRadius: 8,
+              background: focused ? '#fff' : 'var(--surface-2)',
+              color: 'var(--text-primary)', fontSize: 13,
+              outline: 'none',
+              transition: 'border-color .15s, background .15s',
+              boxShadow: focused ? '0 0 0 3px rgba(37,99,235,.12)' : 'none',
+            }}
+          />
+          <div style={{
+            position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)',
+            display: 'flex', gap: 4,
+          }}>
+            {query && (
+              <button type="button" onClick={handleClear}
+                style={{ background: 'none', border: 'none', cursor: 'pointer',
+                         color: 'var(--text-muted)', fontSize: 16, lineHeight: 1,
+                         padding: '0 2px' }}>
+                ×
+              </button>
+            )}
+            <kbd style={{
+              padding: '2px 5px', borderRadius: 4,
+              background: 'var(--surface-2)', border: '1px solid var(--border)',
+              fontSize: 10, color: 'var(--text-muted)', fontFamily: 'inherit',
+            }}>⌘K</kbd>
+          </div>
+        </form>
+      )}
 
       {/* Spacer */}
       <div style={{ flex: 1 }} />
@@ -118,6 +162,7 @@ export default function Navbar({ onSearch, neo4jStatus }) {
         padding: '5px 12px', borderRadius: 999,
         background: neo4jStatus === 'ok' ? 'var(--success-bg)' : 'var(--danger-bg)',
         border: `1px solid ${neo4jStatus === 'ok' ? '#6EE7B7' : '#FCA5A5'}`,
+        flexShrink: 0,
       }}>
         <span style={{
           width: 7, height: 7, borderRadius: '50%',

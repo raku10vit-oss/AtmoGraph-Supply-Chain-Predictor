@@ -1,0 +1,2253 @@
+{
+  "version": "2.0",
+  "source": "Port-disruption-database.xlsx",
+  "total_records": 217,
+  "country_risk": {
+    "U.S.A.": {
+      "event_count": 84,
+      "total_severity": 132,
+      "total_days": 426.0,
+      "severity_counts": {
+        "3": 32,
+        "2": 8,
+        "1": 20,
+        "0": 24
+      },
+      "events": [
+        "Hurricane Irene",
+        "Mississippi floods",
+        "Hurricane Sandy",
+        "Hurricane Matthew",
+        "Hurricane Harvey",
+        "Hurricane Irma",
+        "Hurricane Maria",
+        "Hurricane Barry",
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 1.571,
+      "mean_days": 5.071,
+      "risk_score": 0.5237
+    },
+    "Australia": {
+      "event_count": 74,
+      "total_severity": 102,
+      "total_days": 292.0,
+      "severity_counts": {
+        "3": 26,
+        "0": 30,
+        "2": 6,
+        "1": 12
+      },
+      "events": [
+        "Tropical Cyclone Narelle",
+        "Tropical Cyclone Oswald",
+        "Tropical Cyclone Peta",
+        "Tropical Cyclone Rusty",
+        "Tropical Cyclone Christine",
+        "Tropical Cyclone Ita",
+        "Tropical Cyclone Marcia",
+        "Tropical Cyclone Nathan",
+        "Tropical Cyclone Olwyn",
+        "Tropical Cyclone Quang",
+        "Tropical Cyclone Debbie",
+        "Queensland floods",
+        "Tropical Cyclone Veronica"
+      ],
+      "mean_severity": 1.378,
+      "mean_days": 3.946,
+      "risk_score": 0.4593
+    },
+    "Bahamas": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 21.0,
+      "severity_counts": {
+        "3": 1
+      },
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 21.0,
+      "risk_score": 1.0
+    },
+    "Jamaica": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 7.0,
+      "severity_counts": {
+        "1": 1
+      },
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 7.0,
+      "risk_score": 0.3333
+    },
+    "Mexico": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "severity_counts": {
+        "0": 1
+      },
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0,
+      "risk_score": 0.0
+    },
+    "Panama": {
+      "event_count": 2,
+      "total_severity": 1,
+      "total_days": 11.0,
+      "severity_counts": {
+        "0": 1,
+        "1": 1
+      },
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 0.5,
+      "mean_days": 5.5,
+      "risk_score": 0.1667
+    },
+    "Colombia": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "severity_counts": {
+        "0": 1
+      },
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0,
+      "risk_score": 0.0
+    },
+    "Dominican Republic": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 6.0,
+      "severity_counts": {
+        "1": 1
+      },
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 6.0,
+      "risk_score": 0.3333
+    },
+    "Mozambique": {
+      "event_count": 2,
+      "total_severity": 4,
+      "total_days": 20.0,
+      "severity_counts": {
+        "3": 1,
+        "1": 1
+      },
+      "events": [
+        "Hurricane Idai"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 10.0,
+      "risk_score": 0.6667
+    },
+    "Tanzania": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "severity_counts": {
+        "0": 1
+      },
+      "events": [
+        "Hurricane Idai"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0,
+      "risk_score": 0.0
+    },
+    "Kenya": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "severity_counts": {
+        "0": 1
+      },
+      "events": [
+        "Hurricane Idai"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0,
+      "risk_score": 0.0
+    },
+    "South Africa": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "severity_counts": {
+        "0": 1
+      },
+      "events": [
+        "Hurricane Idai"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0,
+      "risk_score": 0.0
+    },
+    "Japan": {
+      "event_count": 18,
+      "total_severity": 25,
+      "total_days": 76.0,
+      "severity_counts": {
+        "3": 4,
+        "1": 5,
+        "2": 4,
+        "0": 5
+      },
+      "events": [
+        "Typhoon Hagibis",
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 1.389,
+      "mean_days": 4.222,
+      "risk_score": 0.463
+    },
+    "South-Korea": {
+      "event_count": 4,
+      "total_severity": 2,
+      "total_days": 7.0,
+      "severity_counts": {
+        "0": 2,
+        "1": 2
+      },
+      "events": [
+        "Typhoon Hagibis",
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 0.5,
+      "mean_days": 1.75,
+      "risk_score": 0.1667
+    },
+    "China": {
+      "event_count": 12,
+      "total_severity": 17,
+      "total_days": 83.0,
+      "severity_counts": {
+        "3": 3,
+        "2": 2,
+        "1": 4,
+        "0": 3
+      },
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 1.417,
+      "mean_days": 6.917,
+      "risk_score": 0.4723
+    },
+    "Taiwan": {
+      "event_count": 10,
+      "total_severity": 10,
+      "total_days": 28.0,
+      "severity_counts": {
+        "1": 4,
+        "3": 2,
+        "0": 4
+      },
+      "events": [
+        "Typhoon Lekima",
+        "Typhoon Mitag"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 2.8,
+      "risk_score": 0.3333
+    },
+    "South Korea": {
+      "event_count": 3,
+      "total_severity": 4,
+      "total_days": 12.0,
+      "severity_counts": {
+        "0": 1,
+        "2": 2
+      },
+      "events": [
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 1.333,
+      "mean_days": 4.0,
+      "risk_score": 0.4443
+    }
+  },
+  "port_risk": {
+    "Port of New York and New Jersey": {
+      "event_count": 4,
+      "total_severity": 7,
+      "total_days": 19.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Irene",
+        "Hurricane Sandy",
+        "Hurricane Matthew",
+        "Hurricane Maria"
+      ],
+      "mean_severity": 1.75,
+      "mean_days": 4.75
+    },
+    "Port of Boston": {
+      "event_count": 2,
+      "total_severity": 3,
+      "total_days": 10.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Irene",
+        "Hurricane Sandy"
+      ],
+      "mean_severity": 1.5,
+      "mean_days": 5.0
+    },
+    "Delaware area": {
+      "event_count": 3,
+      "total_severity": 3,
+      "total_days": 11.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Irene",
+        "Hurricane Sandy",
+        "Hurricane Matthew"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 3.667
+    },
+    "Port Baltimore": {
+      "event_count": 5,
+      "total_severity": 7,
+      "total_days": 27.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Irene",
+        "Hurricane Sandy",
+        "Hurricane Matthew",
+        "Hurricane Maria",
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 1.4,
+      "mean_days": 5.4
+    },
+    "Port Hampton Roads": {
+      "event_count": 3,
+      "total_severity": 6,
+      "total_days": 11.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Irene",
+        "Hurricane Sandy",
+        "Hurricane Maria"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 3.667
+    },
+    "Port of Charleston": {
+      "event_count": 6,
+      "total_severity": 12,
+      "total_days": 35.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Irene",
+        "Hurricane Sandy",
+        "Hurricane Matthew",
+        "Hurricane Irma",
+        "Hurricane Maria",
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 5.833
+    },
+    "Port of Savannah": {
+      "event_count": 6,
+      "total_severity": 13,
+      "total_days": 41.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Irene",
+        "Hurricane Sandy",
+        "Hurricane Matthew",
+        "Hurricane Irma",
+        "Hurricane Maria",
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 2.167,
+      "mean_days": 6.833
+    },
+    "Port Morehead City": {
+      "event_count": 3,
+      "total_severity": 3,
+      "total_days": 4.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Irene",
+        "Hurricane Sandy",
+        "Hurricane Maria"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 1.333
+    },
+    "Port of Houston": {
+      "event_count": 5,
+      "total_severity": 4,
+      "total_days": 13.0,
+      "country": "U.S.A.",
+      "events": [
+        "Mississippi floods",
+        "Hurricane Matthew",
+        "Hurricane Harvey",
+        "Hurricane Irma",
+        "Hurricane Barry"
+      ],
+      "mean_severity": 0.8,
+      "mean_days": 2.6
+    },
+    "Port Arthur and Port Beaumont": {
+      "event_count": 5,
+      "total_severity": 5,
+      "total_days": 25.0,
+      "country": "U.S.A.",
+      "events": [
+        "Mississippi floods",
+        "Hurricane Matthew",
+        "Hurricane Harvey",
+        "Hurricane Irma",
+        "Hurricane Barry"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 5.0
+    },
+    "Port New Orleans": {
+      "event_count": 3,
+      "total_severity": 3,
+      "total_days": 14.0,
+      "country": "U.S.A.",
+      "events": [
+        "Mississippi floods",
+        "Hurricane Harvey",
+        "Hurricane Barry"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 4.667
+    },
+    "Port Mobile": {
+      "event_count": 5,
+      "total_severity": 3,
+      "total_days": 15.0,
+      "country": "U.S.A.",
+      "events": [
+        "Mississippi floods",
+        "Hurricane Matthew",
+        "Hurricane Harvey",
+        "Hurricane Irma",
+        "Hurricane Barry"
+      ],
+      "mean_severity": 0.6,
+      "mean_days": 3.0
+    },
+    "Port South Louisiana": {
+      "event_count": 5,
+      "total_severity": 2,
+      "total_days": 31.0,
+      "country": "U.S.A.",
+      "events": [
+        "Mississippi floods",
+        "Hurricane Matthew",
+        "Hurricane Harvey",
+        "Hurricane Irma",
+        "Hurricane Barry"
+      ],
+      "mean_severity": 0.4,
+      "mean_days": 6.2
+    },
+    "Port Baton Rouge": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 33.0,
+      "country": "U.S.A.",
+      "events": [
+        "Mississippi floods"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 33.0
+    },
+    "Port Dampier": {
+      "event_count": 6,
+      "total_severity": 13,
+      "total_days": 31.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Narelle",
+        "Tropical Cyclone Peta",
+        "Tropical Cyclone Christine",
+        "Tropical Cyclone Olwyn",
+        "Tropical Cyclone Quang",
+        "Tropical Cyclone Veronica"
+      ],
+      "mean_severity": 2.167,
+      "mean_days": 5.167
+    },
+    "Port of Port Hedland": {
+      "event_count": 7,
+      "total_severity": 13,
+      "total_days": 30.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Narelle",
+        "Tropical Cyclone Peta",
+        "Tropical Cyclone Rusty",
+        "Tropical Cyclone Christine",
+        "Tropical Cyclone Olwyn",
+        "Tropical Cyclone Quang",
+        "Tropical Cyclone Veronica"
+      ],
+      "mean_severity": 1.857,
+      "mean_days": 4.286
+    },
+    "Port Walcott": {
+      "event_count": 6,
+      "total_severity": 18,
+      "total_days": 46.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Narelle",
+        "Tropical Cyclone Peta",
+        "Tropical Cyclone Rusty",
+        "Tropical Cyclone Christine",
+        "Tropical Cyclone Quang",
+        "Tropical Cyclone Veronica"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 7.667
+    },
+    "Port Geraldton": {
+      "event_count": 7,
+      "total_severity": 5,
+      "total_days": 10.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Narelle",
+        "Tropical Cyclone Peta",
+        "Tropical Cyclone Rusty",
+        "Tropical Cyclone Christine",
+        "Tropical Cyclone Olwyn",
+        "Tropical Cyclone Quang",
+        "Tropical Cyclone Veronica"
+      ],
+      "mean_severity": 0.714,
+      "mean_days": 1.429
+    },
+    "Port Fremantle": {
+      "event_count": 7,
+      "total_severity": 5,
+      "total_days": 15.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Narelle",
+        "Tropical Cyclone Peta",
+        "Tropical Cyclone Rusty",
+        "Tropical Cyclone Christine",
+        "Tropical Cyclone Olwyn",
+        "Tropical Cyclone Quang",
+        "Tropical Cyclone Veronica"
+      ],
+      "mean_severity": 0.714,
+      "mean_days": 2.143
+    },
+    "Port Bunbury": {
+      "event_count": 7,
+      "total_severity": 2,
+      "total_days": 5.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Narelle",
+        "Tropical Cyclone Peta",
+        "Tropical Cyclone Rusty",
+        "Tropical Cyclone Christine",
+        "Tropical Cyclone Olwyn",
+        "Tropical Cyclone Quang",
+        "Tropical Cyclone Veronica"
+      ],
+      "mean_severity": 0.286,
+      "mean_days": 0.714
+    },
+    "Port Darwin": {
+      "event_count": 7,
+      "total_severity": 1,
+      "total_days": 2.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Narelle",
+        "Tropical Cyclone Peta",
+        "Tropical Cyclone Rusty",
+        "Tropical Cyclone Christine",
+        "Tropical Cyclone Olwyn",
+        "Tropical Cyclone Quang",
+        "Tropical Cyclone Veronica"
+      ],
+      "mean_severity": 0.143,
+      "mean_days": 0.286
+    },
+    "Port Hay Point": {
+      "event_count": 6,
+      "total_severity": 10,
+      "total_days": 69.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Oswald",
+        "Tropical Cyclone Ita",
+        "Tropical Cyclone Marcia",
+        "Tropical Cyclone Nathan",
+        "Tropical Cyclone Debbie",
+        "Queensland floods"
+      ],
+      "mean_severity": 1.667,
+      "mean_days": 11.5
+    },
+    "Port Mackay": {
+      "event_count": 2,
+      "total_severity": 3,
+      "total_days": 7.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Oswald",
+        "Tropical Cyclone Ita"
+      ],
+      "mean_severity": 1.5,
+      "mean_days": 3.5
+    },
+    "Port Brisbane": {
+      "event_count": 5,
+      "total_severity": 3,
+      "total_days": 5.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Oswald",
+        "Tropical Cyclone Ita",
+        "Tropical Cyclone Marcia",
+        "Tropical Cyclone Nathan",
+        "Tropical Cyclone Debbie"
+      ],
+      "mean_severity": 0.6,
+      "mean_days": 1.0
+    },
+    "Port Gladstone": {
+      "event_count": 6,
+      "total_severity": 9,
+      "total_days": 21.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Oswald",
+        "Tropical Cyclone Ita",
+        "Tropical Cyclone Marcia",
+        "Tropical Cyclone Nathan",
+        "Tropical Cyclone Debbie",
+        "Queensland floods"
+      ],
+      "mean_severity": 1.5,
+      "mean_days": 3.5
+    },
+    "Port Townsville": {
+      "event_count": 6,
+      "total_severity": 14,
+      "total_days": 32.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Oswald",
+        "Tropical Cyclone Ita",
+        "Tropical Cyclone Marcia",
+        "Tropical Cyclone Nathan",
+        "Tropical Cyclone Debbie",
+        "Queensland floods"
+      ],
+      "mean_severity": 2.333,
+      "mean_days": 5.333
+    },
+    "Port of Dampier": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 6.0,
+      "country": "Australia",
+      "events": [
+        "Tropical Cyclone Rusty"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 6.0
+    },
+    "Port of Jacksonville": {
+      "event_count": 4,
+      "total_severity": 10,
+      "total_days": 27.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Matthew",
+        "Hurricane Irma",
+        "Hurricane Maria",
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 2.5,
+      "mean_days": 6.75
+    },
+    "Port Everglades": {
+      "event_count": 3,
+      "total_severity": 9,
+      "total_days": 17.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Matthew",
+        "Hurricane Irma",
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 5.667
+    },
+    "Port of Miami": {
+      "event_count": 2,
+      "total_severity": 6,
+      "total_days": 7.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Matthew",
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 3.5
+    },
+    "Port Palm Beach": {
+      "event_count": 3,
+      "total_severity": 9,
+      "total_days": 16.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Matthew",
+        "Hurricane Irma",
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 5.333
+    },
+    "Port Canaveral": {
+      "event_count": 2,
+      "total_severity": 6,
+      "total_days": 17.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Matthew",
+        "Hurricane Irma"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 8.5
+    },
+    "Port Tampa": {
+      "event_count": 2,
+      "total_severity": 5,
+      "total_days": 7.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Matthew",
+        "Hurricane Irma"
+      ],
+      "mean_severity": 2.5,
+      "mean_days": 3.5
+    },
+    "Port of Corpus Christi": {
+      "event_count": 2,
+      "total_severity": 3,
+      "total_days": 14.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Harvey",
+        "Hurricane Barry"
+      ],
+      "mean_severity": 1.5,
+      "mean_days": 7.0
+    },
+    "Calhoun Port Authority": {
+      "event_count": 2,
+      "total_severity": 3,
+      "total_days": 12.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Harvey",
+        "Hurricane Barry"
+      ],
+      "mean_severity": 1.5,
+      "mean_days": 6.0
+    },
+    "Port Pascagoula": {
+      "event_count": 2,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Harvey",
+        "Hurricane Barry"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "LOOP": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Harvey"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Freeport": {
+      "event_count": 3,
+      "total_severity": 6,
+      "total_days": 31.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Harvey",
+        "Hurricane Barry",
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 10.333
+    },
+    "Port Miami": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 7.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Irma"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 7.0
+    },
+    "Port Wilmington": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Maria"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Port Fourchon": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 3.0,
+      "country": "U.S.A.",
+      "events": [
+        "Hurricane Barry"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 3.0
+    },
+    "Kingston": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 7.0,
+      "country": "Jamaica",
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 7.0
+    },
+    "Manzanillo": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "Mexico",
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Colon": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "Panama",
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Cartagena_Mamonal": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "Colombia",
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Caucedo": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 6.0,
+      "country": "Dominican Republic",
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 6.0
+    },
+    "Cristobal": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 11.0,
+      "country": "Panama",
+      "events": [
+        "Hurricane Dorian"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 11.0
+    },
+    "Beira": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 16.0,
+      "country": "Mozambique",
+      "events": [
+        "Hurricane Idai"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 16.0
+    },
+    "Maputo": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 4.0,
+      "country": "Mozambique",
+      "events": [
+        "Hurricane Idai"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 4.0
+    },
+    "Dar es Salaam": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "Tanzania",
+      "events": [
+        "Hurricane Idai"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Mombasa": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "Kenya",
+      "events": [
+        "Hurricane Idai"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Durban": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "South Africa",
+      "events": [
+        "Hurricane Idai"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Port Abbot Point": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 13.0,
+      "country": "Australia",
+      "events": [
+        "Queensland floods"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 13.0
+    },
+    "Tokyo area": {
+      "event_count": 2,
+      "total_severity": 3,
+      "total_days": 7.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis",
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 1.5,
+      "mean_days": 3.5
+    },
+    "Mikawa": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 6.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 6.0
+    },
+    "Nagoya": {
+      "event_count": 1,
+      "total_severity": 2,
+      "total_days": 6.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 6.0
+    },
+    "Yorkaichi": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 8.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 8.0
+    },
+    "Wakatama-Shimotsu": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 6.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 6.0
+    },
+    "Kobe": {
+      "event_count": 2,
+      "total_severity": 2,
+      "total_days": 5.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis",
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 2.5
+    },
+    "Osaka_Sakai-Senboku": {
+      "event_count": 1,
+      "total_severity": 2,
+      "total_days": 5.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 5.0
+    },
+    "Higashi-Harima": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 4.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 4.0
+    },
+    "Himeji": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 4.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 4.0
+    },
+    "Mizushima Ko": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 5.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 5.0
+    },
+    "Fukuyama": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 5.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 5.0
+    },
+    "Fukui Ko": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Miyazy": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Busan": {
+      "event_count": 2,
+      "total_severity": 1,
+      "total_days": 4.0,
+      "country": "South-Korea",
+      "events": [
+        "Typhoon Hagibis",
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 0.5,
+      "mean_days": 2.0
+    },
+    "Sendai": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 6.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 6.0
+    },
+    "Niigata": {
+      "event_count": 1,
+      "total_severity": 2,
+      "total_days": 9.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 9.0
+    },
+    "Akita": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "Japan",
+      "events": [
+        "Typhoon Hagibis"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Haimen": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 8.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 8.0
+    },
+    "Tianjin": {
+      "event_count": 1,
+      "total_severity": 2,
+      "total_days": 6.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 6.0
+    },
+    "Shanghai": {
+      "event_count": 1,
+      "total_severity": 2,
+      "total_days": 5.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 5.0
+    },
+    "Wenzhou": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 45.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 45.0
+    },
+    "Qingdao Gang": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 4.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 4.0
+    },
+    "Xiamen": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Hong Kong": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Chi-lung": {
+      "event_count": 2,
+      "total_severity": 2,
+      "total_days": 9.0,
+      "country": "Taiwan",
+      "events": [
+        "Typhoon Lekima",
+        "Typhoon Mitag"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 4.5
+    },
+    "Tan-shui": {
+      "event_count": 2,
+      "total_severity": 6,
+      "total_days": 12.0,
+      "country": "Taiwan",
+      "events": [
+        "Typhoon Lekima",
+        "Typhoon Mitag"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 6.0
+    },
+    "Tai-Chung Kang": {
+      "event_count": 2,
+      "total_severity": 1,
+      "total_days": 3.0,
+      "country": "Taiwan",
+      "events": [
+        "Typhoon Lekima",
+        "Typhoon Mitag"
+      ],
+      "mean_severity": 0.5,
+      "mean_days": 1.5
+    },
+    "Mailiao": {
+      "event_count": 2,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "Taiwan",
+      "events": [
+        "Typhoon Lekima",
+        "Typhoon Mitag"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Kao-Hsiung": {
+      "event_count": 2,
+      "total_severity": 1,
+      "total_days": 4.0,
+      "country": "Taiwan",
+      "events": [
+        "Typhoon Lekima",
+        "Typhoon Mitag"
+      ],
+      "mean_severity": 0.5,
+      "mean_days": 2.0
+    },
+    "Zhapu": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 6.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 6.0
+    },
+    "Ningbo": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 3.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 3.0
+    },
+    "Zhoushan": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 3.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 3.0
+    },
+    "Fuzhou": {
+      "event_count": 1,
+      "total_severity": 3,
+      "total_days": 3.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 3.0,
+      "mean_days": 3.0
+    },
+    "Quanzhou": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "China",
+      "events": [
+        "Typhoon Lekima"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Ulsan": {
+      "event_count": 1,
+      "total_severity": 1,
+      "total_days": 3.0,
+      "country": "South-Korea",
+      "events": [
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 1.0,
+      "mean_days": 3.0
+    },
+    "Masan": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "South-Korea",
+      "events": [
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Gwangyang Hang": {
+      "event_count": 1,
+      "total_severity": 0,
+      "total_days": 0.0,
+      "country": "South Korea",
+      "events": [
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 0.0,
+      "mean_days": 0.0
+    },
+    "Pyuongtaek Hang": {
+      "event_count": 1,
+      "total_severity": 2,
+      "total_days": 6.0,
+      "country": "South Korea",
+      "events": [
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 6.0
+    },
+    "Inchon": {
+      "event_count": 1,
+      "total_severity": 2,
+      "total_days": 6.0,
+      "country": "South Korea",
+      "events": [
+        "Typhoon Lingling"
+      ],
+      "mean_severity": 2.0,
+      "mean_days": 6.0
+    }
+  },
+  "disruption_events": [
+    {
+      "event_name": "Tropical Cyclone Nathan",
+      "ports_affected": [
+        "Port Hay Point",
+        "Port Brisbane",
+        "Port Gladstone",
+        "Port Townsville"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2015
+      ],
+      "ports_count": 4,
+      "mean_severity": 3.0,
+      "total_days": 20.0,
+      "risk_score": 1.0,
+      "risk_level": "High",
+      "record_count": 4
+    },
+    {
+      "event_name": "Hurricane Irene",
+      "ports_affected": [
+        "Port of New York and New Jersey",
+        "Port of Boston",
+        "Delaware area",
+        "Port Baltimore",
+        "Port Hampton Roads",
+        "Port of Charleston",
+        "Port of Savannah",
+        "Port Morehead City"
+      ],
+      "countries_affected": [
+        "U.S.A."
+      ],
+      "years": [
+        2011
+      ],
+      "ports_count": 8,
+      "mean_severity": 2.375,
+      "total_days": 45.0,
+      "risk_score": 0.7917,
+      "risk_level": "High",
+      "record_count": 8
+    },
+    {
+      "event_name": "Queensland floods",
+      "ports_affected": [
+        "Port Hay Point",
+        "Port Gladstone",
+        "Port Townsville",
+        "Port Abbot Point"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2019
+      ],
+      "ports_count": 4,
+      "mean_severity": 2.25,
+      "total_days": 39.0,
+      "risk_score": 0.75,
+      "risk_level": "High",
+      "record_count": 4
+    },
+    {
+      "event_name": "Hurricane Irma",
+      "ports_affected": [
+        "Port Everglades",
+        "Port Miami",
+        "Port Palm Beach",
+        "Port Canaveral",
+        "Port of Charleston",
+        "Port of Savannah",
+        "Port of Jacksonville",
+        "Port Tampa",
+        "Port Mobile",
+        "Port South Louisiana",
+        "Port of Houston",
+        "Port Arthur and Port Beaumont"
+      ],
+      "countries_affected": [
+        "U.S.A."
+      ],
+      "years": [
+        2017
+      ],
+      "ports_count": 12,
+      "mean_severity": 2.083,
+      "total_days": 56.0,
+      "risk_score": 0.6944,
+      "risk_level": "High",
+      "record_count": 12
+    },
+    {
+      "event_name": "Hurricane Matthew",
+      "ports_affected": [
+        "Port of Jacksonville",
+        "Port of Savannah",
+        "Port of Charleston",
+        "Port Everglades",
+        "Port of Miami",
+        "Port Palm Beach",
+        "Port Canaveral",
+        "Port Tampa",
+        "Port Mobile",
+        "Port South Louisiana",
+        "Port of Houston",
+        "Port Arthur and Port Beaumont",
+        "Port of New York and New Jersey",
+        "Delaware area",
+        "Port Baltimore"
+      ],
+      "countries_affected": [
+        "U.S.A."
+      ],
+      "years": [
+        2016
+      ],
+      "ports_count": 15,
+      "mean_severity": 1.8,
+      "total_days": 58.0,
+      "risk_score": 0.6,
+      "risk_level": "Medium",
+      "record_count": 15
+    },
+    {
+      "event_name": "Hurricane Sandy",
+      "ports_affected": [
+        "Port of New York and New Jersey",
+        "Port of Boston",
+        "Delaware area",
+        "Port Baltimore",
+        "Port Hampton Roads",
+        "Port of Charleston",
+        "Port of Savannah",
+        "Port Morehead City"
+      ],
+      "countries_affected": [
+        "U.S.A."
+      ],
+      "years": [
+        2012
+      ],
+      "ports_count": 8,
+      "mean_severity": 1.75,
+      "total_days": 44.0,
+      "risk_score": 0.5833,
+      "risk_level": "Medium",
+      "record_count": 8
+    },
+    {
+      "event_name": "Tropical Cyclone Marcia",
+      "ports_affected": [
+        "Port Hay Point",
+        "Port Brisbane",
+        "Port Gladstone",
+        "Port Townsville"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2015
+      ],
+      "ports_count": 4,
+      "mean_severity": 1.75,
+      "total_days": 16.0,
+      "risk_score": 0.5833,
+      "risk_level": "Medium",
+      "record_count": 4
+    },
+    {
+      "event_name": "Tropical Cyclone Debbie",
+      "ports_affected": [
+        "Port Hay Point",
+        "Port Brisbane",
+        "Port Gladstone",
+        "Port Townsville"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2017
+      ],
+      "ports_count": 4,
+      "mean_severity": 1.75,
+      "total_days": 55.0,
+      "risk_score": 0.5833,
+      "risk_level": "Medium",
+      "record_count": 4
+    },
+    {
+      "event_name": "Hurricane Harvey",
+      "ports_affected": [
+        "Port of Houston",
+        "Port of Corpus Christi",
+        "Calhoun Port Authority",
+        "Port Arthur and Port Beaumont",
+        "Port New Orleans",
+        "Port Mobile",
+        "Port Pascagoula",
+        "Port South Louisiana",
+        "LOOP",
+        "Freeport"
+      ],
+      "countries_affected": [
+        "U.S.A."
+      ],
+      "years": [
+        2017
+      ],
+      "ports_count": 10,
+      "mean_severity": 1.6,
+      "total_days": 73.0,
+      "risk_score": 0.5333,
+      "risk_level": "Medium",
+      "record_count": 10
+    },
+    {
+      "event_name": "Tropical Cyclone Rusty",
+      "ports_affected": [
+        "Port of Dampier",
+        "Port of Port Hedland",
+        "Port Walcott",
+        "Port Geraldton",
+        "Port Fremantle",
+        "Port Bunbury",
+        "Port Darwin"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2013
+      ],
+      "ports_count": 7,
+      "mean_severity": 1.571,
+      "total_days": 23.0,
+      "risk_score": 0.5238,
+      "risk_level": "Medium",
+      "record_count": 7
+    },
+    {
+      "event_name": "Hurricane Dorian",
+      "ports_affected": [
+        "Freeport",
+        "Kingston",
+        "Manzanillo",
+        "Colon",
+        "Cartagena_Mamonal",
+        "Caucedo",
+        "Cristobal",
+        "Port of Jacksonville",
+        "Port of Savannah",
+        "Port of Charleston",
+        "Port Everglades",
+        "Port of Miami",
+        "Port Palm Beach",
+        "Port Baltimore"
+      ],
+      "countries_affected": [
+        "Bahamas",
+        "Jamaica",
+        "Mexico",
+        "Panama",
+        "Colombia",
+        "Dominican Republic",
+        "U.S.A."
+      ],
+      "years": [
+        2019
+      ],
+      "ports_count": 14,
+      "mean_severity": 1.571,
+      "total_days": 88.0,
+      "risk_score": 0.5238,
+      "risk_level": "Medium",
+      "record_count": 14
+    },
+    {
+      "event_name": "Typhoon Hagibis",
+      "ports_affected": [
+        "Tokyo area",
+        "Mikawa",
+        "Nagoya",
+        "Yorkaichi",
+        "Wakatama-Shimotsu",
+        "Kobe",
+        "Osaka_Sakai-Senboku",
+        "Higashi-Harima",
+        "Himeji",
+        "Mizushima Ko",
+        "Fukuyama",
+        "Fukui Ko",
+        "Miyazy",
+        "Busan",
+        "Sendai",
+        "Niigata",
+        "Akita"
+      ],
+      "countries_affected": [
+        "Japan",
+        "South-Korea"
+      ],
+      "years": [
+        2019
+      ],
+      "ports_count": 17,
+      "mean_severity": 1.471,
+      "total_days": 76.0,
+      "risk_score": 0.4902,
+      "risk_level": "Medium",
+      "record_count": 17
+    },
+    {
+      "event_name": "Tropical Cyclone Veronica",
+      "ports_affected": [
+        "Port Dampier",
+        "Port of Port Hedland",
+        "Port Walcott",
+        "Port Geraldton",
+        "Port Fremantle",
+        "Port Bunbury",
+        "Port Darwin"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2019
+      ],
+      "ports_count": 7,
+      "mean_severity": 1.429,
+      "total_days": 42.0,
+      "risk_score": 0.4762,
+      "risk_level": "Medium",
+      "record_count": 7
+    },
+    {
+      "event_name": "Typhoon Lekima",
+      "ports_affected": [
+        "Haimen",
+        "Tianjin",
+        "Shanghai",
+        "Wenzhou",
+        "Qingdao Gang",
+        "Xiamen",
+        "Hong Kong",
+        "Chi-lung",
+        "Tan-shui",
+        "Tai-Chung Kang",
+        "Mailiao",
+        "Kao-Hsiung",
+        "Zhapu",
+        "Ningbo",
+        "Zhoushan",
+        "Fuzhou",
+        "Quanzhou"
+      ],
+      "countries_affected": [
+        "China",
+        "Taiwan"
+      ],
+      "years": [
+        2019
+      ],
+      "ports_count": 17,
+      "mean_severity": 1.353,
+      "total_days": 101.0,
+      "risk_score": 0.451,
+      "risk_level": "Medium",
+      "record_count": 17
+    },
+    {
+      "event_name": "Tropical Cyclone Narelle",
+      "ports_affected": [
+        "Port Dampier",
+        "Port of Port Hedland",
+        "Port Walcott",
+        "Port Geraldton",
+        "Port Fremantle",
+        "Port Bunbury",
+        "Port Darwin"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2013
+      ],
+      "ports_count": 7,
+      "mean_severity": 1.286,
+      "total_days": 20.0,
+      "risk_score": 0.4286,
+      "risk_level": "Medium",
+      "record_count": 7
+    },
+    {
+      "event_name": "Tropical Cyclone Christine",
+      "ports_affected": [
+        "Port Dampier",
+        "Port of Port Hedland",
+        "Port Walcott",
+        "Port Geraldton",
+        "Port Fremantle",
+        "Port Bunbury",
+        "Port Darwin"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2014
+      ],
+      "ports_count": 7,
+      "mean_severity": 1.286,
+      "total_days": 24.0,
+      "risk_score": 0.4286,
+      "risk_level": "Medium",
+      "record_count": 7
+    },
+    {
+      "event_name": "Tropical Cyclone Olwyn",
+      "ports_affected": [
+        "Port Dampier",
+        "Port of Port Hedland",
+        "Port Geraldton",
+        "Port Fremantle",
+        "Port Bunbury",
+        "Port Darwin"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2015
+      ],
+      "ports_count": 6,
+      "mean_severity": 1.167,
+      "total_days": 9.0,
+      "risk_score": 0.3889,
+      "risk_level": "Medium",
+      "record_count": 6
+    },
+    {
+      "event_name": "Tropical Cyclone Peta",
+      "ports_affected": [
+        "Port Dampier",
+        "Port of Port Hedland",
+        "Port Walcott",
+        "Port Geraldton",
+        "Port Fremantle",
+        "Port Bunbury",
+        "Port Darwin"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2013
+      ],
+      "ports_count": 7,
+      "mean_severity": 1.143,
+      "total_days": 15.0,
+      "risk_score": 0.381,
+      "risk_level": "Medium",
+      "record_count": 7
+    },
+    {
+      "event_name": "Tropical Cyclone Oswald",
+      "ports_affected": [
+        "Port Hay Point",
+        "Port Mackay",
+        "Port Brisbane",
+        "Port Gladstone",
+        "Port Townsville"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2013
+      ],
+      "ports_count": 5,
+      "mean_severity": 1.0,
+      "total_days": 11.0,
+      "risk_score": 0.3333,
+      "risk_level": "Low",
+      "record_count": 5
+    },
+    {
+      "event_name": "Tropical Cyclone Quang",
+      "ports_affected": [
+        "Port Dampier",
+        "Port of Port Hedland",
+        "Port Walcott",
+        "Port Geraldton",
+        "Port Fremantle",
+        "Port Bunbury",
+        "Port Darwin"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2015
+      ],
+      "ports_count": 7,
+      "mean_severity": 0.857,
+      "total_days": 12.0,
+      "risk_score": 0.2857,
+      "risk_level": "Low",
+      "record_count": 7
+    },
+    {
+      "event_name": "Mississippi floods",
+      "ports_affected": [
+        "Port of Houston",
+        "Port Arthur and Port Beaumont",
+        "Port New Orleans",
+        "Port Mobile",
+        "Port South Louisiana",
+        "Port Baton Rouge"
+      ],
+      "countries_affected": [
+        "U.S.A."
+      ],
+      "years": [
+        2011
+      ],
+      "ports_count": 6,
+      "mean_severity": 0.833,
+      "total_days": 70.0,
+      "risk_score": 0.2778,
+      "risk_level": "Low",
+      "record_count": 6
+    },
+    {
+      "event_name": "Hurricane Idai",
+      "ports_affected": [
+        "Beira",
+        "Maputo",
+        "Dar es Salaam",
+        "Mombasa",
+        "Durban"
+      ],
+      "countries_affected": [
+        "Mozambique",
+        "Tanzania",
+        "Kenya",
+        "South Africa"
+      ],
+      "years": [
+        2019
+      ],
+      "ports_count": 5,
+      "mean_severity": 0.8,
+      "total_days": 20.0,
+      "risk_score": 0.2667,
+      "risk_level": "Low",
+      "record_count": 5
+    },
+    {
+      "event_name": "Typhoon Mitag",
+      "ports_affected": [
+        "Chi-lung",
+        "Tan-shui",
+        "Tai-Chung Kang",
+        "Mailiao",
+        "Kao-Hsiung"
+      ],
+      "countries_affected": [
+        "Taiwan"
+      ],
+      "years": [
+        2019
+      ],
+      "ports_count": 5,
+      "mean_severity": 0.8,
+      "total_days": 10.0,
+      "risk_score": 0.2667,
+      "risk_level": "Low",
+      "record_count": 5
+    },
+    {
+      "event_name": "Typhoon Lingling",
+      "ports_affected": [
+        "Ulsan",
+        "Busan",
+        "Masan",
+        "Gwangyang Hang",
+        "Pyuongtaek Hang",
+        "Inchon",
+        "Tokyo area",
+        "Kobe"
+      ],
+      "countries_affected": [
+        "South-Korea",
+        "South Korea",
+        "Japan"
+      ],
+      "years": [
+        2019
+      ],
+      "ports_count": 8,
+      "mean_severity": 0.75,
+      "total_days": 19.0,
+      "risk_score": 0.25,
+      "risk_level": "Low",
+      "record_count": 8
+    },
+    {
+      "event_name": "Hurricane Barry",
+      "ports_affected": [
+        "Port of Houston",
+        "Freeport",
+        "Port of Corpus Christi",
+        "Calhoun Port Authority",
+        "Port Arthur and Port Beaumont",
+        "Port New Orleans",
+        "Port Mobile",
+        "Port Pascagoula",
+        "Port South Louisiana",
+        "Port Fourchon"
+      ],
+      "countries_affected": [
+        "U.S.A."
+      ],
+      "years": [
+        2019
+      ],
+      "ports_count": 10,
+      "mean_severity": 0.6,
+      "total_days": 17.0,
+      "risk_score": 0.2,
+      "risk_level": "Low",
+      "record_count": 10
+    },
+    {
+      "event_name": "Hurricane Maria",
+      "ports_affected": [
+        "Port Morehead City",
+        "Port Wilmington",
+        "Port of Charleston",
+        "Port Hampton Roads",
+        "Port of New York and New Jersey",
+        "Port Baltimore",
+        "Port of Savannah",
+        "Port of Jacksonville"
+      ],
+      "countries_affected": [
+        "U.S.A."
+      ],
+      "years": [
+        2017
+      ],
+      "ports_count": 8,
+      "mean_severity": 0.5,
+      "total_days": 20.0,
+      "risk_score": 0.1667,
+      "risk_level": "Low",
+      "record_count": 8
+    },
+    {
+      "event_name": "Tropical Cyclone Ita",
+      "ports_affected": [
+        "Port Hay Point",
+        "Port Mackay",
+        "Port Brisbane",
+        "Port Gladstone",
+        "Port Townsville"
+      ],
+      "countries_affected": [
+        "Australia"
+      ],
+      "years": [
+        2014
+      ],
+      "ports_count": 5,
+      "mean_severity": 0.4,
+      "total_days": 6.0,
+      "risk_score": 0.1333,
+      "risk_level": "Low",
+      "record_count": 5
+    }
+  ],
+  "industry_risk": {
+    "Steel": {
+      "suppliers_in_disrupted_countries": 2166,
+      "total_suppliers": 2835,
+      "exposure_ratio": 0.764,
+      "risk_score": 1.0
+    },
+    "Automotive": {
+      "suppliers_in_disrupted_countries": 2024,
+      "total_suppliers": 2818,
+      "exposure_ratio": 0.7182,
+      "risk_score": 1.0
+    },
+    "Chemicals": {
+      "suppliers_in_disrupted_countries": 2002,
+      "total_suppliers": 2680,
+      "exposure_ratio": 0.747,
+      "risk_score": 1.0
+    },
+    "Metals & Mining": {
+      "suppliers_in_disrupted_countries": 754,
+      "total_suppliers": 1327,
+      "exposure_ratio": 0.5682,
+      "risk_score": 1.0
+    },
+    "Engineering & Construction": {
+      "suppliers_in_disrupted_countries": 624,
+      "total_suppliers": 1145,
+      "exposure_ratio": 0.545,
+      "risk_score": 1.0
+    },
+    "Technology Hardware": {
+      "suppliers_in_disrupted_countries": 366,
+      "total_suppliers": 391,
+      "exposure_ratio": 0.9361,
+      "risk_score": 1.0
+    },
+    "Machinery": {
+      "suppliers_in_disrupted_countries": 201,
+      "total_suppliers": 301,
+      "exposure_ratio": 0.6678,
+      "risk_score": 1.0
+    },
+    "Renewable Energy": {
+      "suppliers_in_disrupted_countries": 187,
+      "total_suppliers": 322,
+      "exposure_ratio": 0.5807,
+      "risk_score": 1.0
+    },
+    "Construction Materials": {
+      "suppliers_in_disrupted_countries": 183,
+      "total_suppliers": 222,
+      "exposure_ratio": 0.8243,
+      "risk_score": 1.0
+    },
+    "Electrical Equipment": {
+      "suppliers_in_disrupted_countries": 181,
+      "total_suppliers": 242,
+      "exposure_ratio": 0.7479,
+      "risk_score": 1.0
+    },
+    "Industrial Intermediate Prod": {
+      "suppliers_in_disrupted_countries": 128,
+      "total_suppliers": 228,
+      "exposure_ratio": 0.5614,
+      "risk_score": 1.0
+    },
+    "Diversified Industrials": {
+      "suppliers_in_disrupted_countries": 93,
+      "total_suppliers": 179,
+      "exposure_ratio": 0.5196,
+      "risk_score": 1.0
+    },
+    "Transportation & Logistics": {
+      "suppliers_in_disrupted_countries": 75,
+      "total_suppliers": 106,
+      "exposure_ratio": 0.7075,
+      "risk_score": 1.0
+    },
+    "Semiconductors": {
+      "suppliers_in_disrupted_countries": 46,
+      "total_suppliers": 49,
+      "exposure_ratio": 0.9388,
+      "risk_score": 1.0
+    },
+    "Gas & Water Utilities": {
+      "suppliers_in_disrupted_countries": 26,
+      "total_suppliers": 46,
+      "exposure_ratio": 0.5652,
+      "risk_score": 1.0
+    },
+    "Telecommunications": {
+      "suppliers_in_disrupted_countries": 11,
+      "total_suppliers": 16,
+      "exposure_ratio": 0.6875,
+      "risk_score": 1.0
+    },
+    "Electric Utilities": {
+      "suppliers_in_disrupted_countries": 777,
+      "total_suppliers": 1750,
+      "exposure_ratio": 0.444,
+      "risk_score": 0.888
+    },
+    "Transportation Equipment": {
+      "suppliers_in_disrupted_countries": 57,
+      "total_suppliers": 131,
+      "exposure_ratio": 0.4351,
+      "risk_score": 0.8702
+    },
+    "Oil & Gas Producers": {
+      "suppliers_in_disrupted_countries": 645,
+      "total_suppliers": 1560,
+      "exposure_ratio": 0.4135,
+      "risk_score": 0.8269
+    },
+    "Technology Services": {
+      "suppliers_in_disrupted_countries": 23,
+      "total_suppliers": 57,
+      "exposure_ratio": 0.4035,
+      "risk_score": 0.807
+    },
+    "Oil & Gas Services & Equip": {
+      "suppliers_in_disrupted_countries": 5,
+      "total_suppliers": 120,
+      "exposure_ratio": 0.0417,
+      "risk_score": 0.0833
+    }
+  },
+  "meta": {
+    "countries_with_data": 17,
+    "ports_with_data": 92,
+    "unique_events": 27,
+    "severity_range": {
+      "min": 0.0,
+      "max": 3.0
+    }
+  }
+}
