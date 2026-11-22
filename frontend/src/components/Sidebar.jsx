@@ -126,8 +126,8 @@ export default function Sidebar({ activeLabelFilter, onLabelFilter, stats }) {
       <div style={{ marginTop: 'auto', padding: '12px 16px',
                     borderTop: '1px solid var(--border)',
                     fontSize: 11, color: 'var(--text-muted)' }}>
-        <div style={{ fontWeight: 600, marginBottom: 2 }}>AtmoGraph v1.0</div>
-        <div>Week 1 · Graph Foundation</div>
+        <div style={{ fontWeight: 600, marginBottom: 2 }}>AtmoGraph v2.0</div>
+        <div>Week 2 · Disruption Prediction</div>
         <div style={{ marginTop: 4, fontSize: 10 }}>
           Data: CC BY-NC 4.0 / Academic use
         </div>

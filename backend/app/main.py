@@ -15,7 +15,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.database.neo4j_connection import neo4j_conn
-from app.routes.graph_routes import router
+from app.routes.graph_routes import router as graph_router
+from app.routes.prediction_routes import router as prediction_router
+from app.services import prediction_service
 
 # ── Logging ────────────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -39,6 +41,11 @@ async def lifespan(app: FastAPI):  # type: ignore[type-arg]
             "Graph endpoints will return 500 until Neo4j is reachable.",
             exc,
         )
+    # Week 2: preload prediction data caches
+    try:
+        prediction_service.preload_all()
+    except Exception as exc:
+        logger.warning("⚠️  Prediction data preload warning: %s", exc)
     yield
     # Shutdown
     neo4j_conn.close()
@@ -51,9 +58,9 @@ app = FastAPI(
     title="AtmoGraph API",
     description=(
         "**AtmoGraph – Supply Chain Ripple Effect Predictor** "
-        "| Graph analysis backend powered by Neo4j + FastAPI."
+        "| Graph analysis + Disruption Prediction backend powered by Neo4j + FastAPI."
     ),
-    version="1.0.0",
+    version="2.0.0",
     contact={"name": "AtmoGraph Team"},
     lifespan=lifespan,
 )
@@ -68,16 +75,18 @@ app.add_middleware(
 )
 
 # ── Routes ─────────────────────────────────────────────────────────────────────
-app.include_router(router)
+app.include_router(graph_router)        # Week 1: graph endpoints
+app.include_router(prediction_router)   # Week 2: prediction endpoints
 
 
 @app.get("/", include_in_schema=False)
 async def root():
     return {
         "name": "AtmoGraph API",
-        "version": "1.0.0",
+        "version": "2.0.0",
         "docs": "/docs",
         "health": "/api/health",
+        "predictions": "/api/predictions/overview",
     }
 
 

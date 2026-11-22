@@ -14,7 +14,7 @@ import {
 
 const GRAPH_LIMIT = 150
 
-export default function Dashboard() {
+export default function Dashboard({ onNavigate }) {
   // ── Status ─────────────────────────────────────────────────────
   const [neo4jStatus, setNeo4jStatus] = useState('loading')
 
@@ -120,7 +120,7 @@ export default function Dashboard() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
-      <Navbar onSearch={handleSearch} neo4jStatus={neo4jStatus} />
+      <Navbar onSearch={handleSearch} neo4jStatus={neo4jStatus} activePage="graph" onNavigate={onNavigate} />
 
       <div style={{
         display: 'flex', flex: 1, overflow: 'hidden',
