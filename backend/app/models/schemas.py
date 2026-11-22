@@ -1,5 +1,5 @@
 """
-AtmoGraph – Week 2 Pydantic Schemas (Prediction Engine)
+AtmoGraph – Week 2.5 Pydantic Schemas (Prediction Engine)
 All new models are appended here; existing models are UNCHANGED.
 """
 from __future__ import annotations
@@ -67,7 +67,7 @@ class SearchResultModel(BaseModel):
 # ══════════════════════════════════════════════════════════════════
 
 class RiskSignalModel(BaseModel):
-    """One of the five interpretable risk signals."""
+    """One of the six interpretable risk signals."""
     signal_name: str = Field(..., description="Human-readable signal name")
     score: float = Field(..., ge=0.0, le=1.0, description="Normalised score 0–1")
     weight: float = Field(..., description="Weight used in aggregation")
@@ -76,7 +76,7 @@ class RiskSignalModel(BaseModel):
 
 
 class RiskScoreModel(BaseModel):
-    """Aggregated risk score with breakdown of all five signals."""
+    """Aggregated risk score with breakdown of all six signals."""
     entity_name: str
     entity_type: str              # "company" | "country" | "port" | "industry"
     overall_score: float = Field(..., ge=0.0, le=1.0)
@@ -150,8 +150,15 @@ class PropagationModel(BaseModel):
     methodology: str
 
 
+class TierCompanyModel(BaseModel):
+    """One company entry in a ground-truth tier chain."""
+    company: str
+    country: Optional[str] = None
+    industry: Optional[str] = None
+
+
 class ScenarioModel(BaseModel):
-    """One of the 30 structured disruption scenarios."""
+    """One of the 30 structured disruption scenarios, optionally enriched with GT tier chains."""
     scenario_id: str
     name: str
     description: str
@@ -164,6 +171,13 @@ class ScenarioModel(BaseModel):
     monitored_company: Optional[str] = None
     risk_score: float = Field(..., ge=0.0, le=1.0)
     risk_level: str
+    # Ground-truth tier chains (populated from data/processed/ground_truth_index.json)
+    gt_tier_1: List[Dict[str, Any]] = Field(default_factory=list)
+    gt_tier_2: List[Dict[str, Any]] = Field(default_factory=list)
+    gt_tier_3: List[Dict[str, Any]] = Field(default_factory=list)
+    gt_total_tier_1: int = 0
+    gt_total_tier_2: int = 0
+    gt_total_tier_3: int = 0
 
 
 class CompanyRiskProfileModel(BaseModel):

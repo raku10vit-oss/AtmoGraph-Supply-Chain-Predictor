@@ -224,3 +224,6 @@ __marimo__/
 data/delay_prediction/syndelay_v1.csv
 # General guard: any CSV larger than ~50 MB placed in delay_prediction/
 data/delay_prediction/*.csv
+
+# data/raw/ — raw 54 MB SynDelay file excluded; all other raw files are tracked
+data/raw/syndelay_v1.csv
