@@ -1,0 +1,1032 @@
+{
+  "version": "1.0",
+  "source": "syndelay_v1.csv",
+  "source_rows": 118764,
+  "overall_delay_rate": 0.7554,
+  "countries_with_data": 161,
+  "country_risk": {
+    "Afghanistan": {
+      "total_orders": 108,
+      "delayed_orders": 79,
+      "delay_rate": 0.7315,
+      "risk_score": 0.7315
+    },
+    "Albania": {
+      "total_orders": 17,
+      "delayed_orders": 16,
+      "delay_rate": 0.9412,
+      "risk_score": 0.9412
+    },
+    "Angola": {
+      "total_orders": 238,
+      "delayed_orders": 172,
+      "delay_rate": 0.7227,
+      "risk_score": 0.7227
+    },
+    "Argelia": {
+      "total_orders": 502,
+      "delayed_orders": 381,
+      "delay_rate": 0.759,
+      "risk_score": 0.759
+    },
+    "Argentina": {
+      "total_orders": 1350,
+      "delayed_orders": 992,
+      "delay_rate": 0.7348,
+      "risk_score": 0.7348
+    },
+    "Armenia": {
+      "total_orders": 5,
+      "delayed_orders": 4,
+      "delay_rate": 0.8,
+      "risk_score": 0.8
+    },
+    "Australia": {
+      "total_orders": 4595,
+      "delayed_orders": 3409,
+      "delay_rate": 0.7419,
+      "risk_score": 0.7419
+    },
+    "Austria": {
+      "total_orders": 991,
+      "delayed_orders": 741,
+      "delay_rate": 0.7477,
+      "risk_score": 0.7477
+    },
+    "Azerbaijan": {
+      "total_orders": 47,
+      "delayed_orders": 33,
+      "delay_rate": 0.7021,
+      "risk_score": 0.7021
+    },
+    "Bahrain": {
+      "total_orders": 4,
+      "delayed_orders": 2,
+      "delay_rate": 0.5,
+      "risk_score": 0.5
+    },
+    "Bangladesh": {
+      "total_orders": 285,
+      "delayed_orders": 227,
+      "delay_rate": 0.7965,
+      "risk_score": 0.7965
+    },
+    "Barbados": {
+      "total_orders": 94,
+      "delayed_orders": 70,
+      "delay_rate": 0.7447,
+      "risk_score": 0.7447
+    },
+    "Belarus": {
+      "total_orders": 83,
+      "delayed_orders": 65,
+      "delay_rate": 0.7831,
+      "risk_score": 0.7831
+    },
+    "Belgium": {
+      "total_orders": 569,
+      "delayed_orders": 403,
+      "delay_rate": 0.7083,
+      "risk_score": 0.7083
+    },
+    "Belice": {
+      "total_orders": 4,
+      "delayed_orders": 4,
+      "delay_rate": 1.0,
+      "risk_score": 1.0
+    },
+    "Benin": {
+      "total_orders": 223,
+      "delayed_orders": 150,
+      "delay_rate": 0.6726,
+      "risk_score": 0.6726
+    },
+    "Bhutan": {
+      "total_orders": 2,
+      "delayed_orders": 1,
+      "delay_rate": 0.5,
+      "risk_score": 0.5
+    },
+    "Bolivia": {
+      "total_orders": 261,
+      "delayed_orders": 209,
+      "delay_rate": 0.8008,
+      "risk_score": 0.8008
+    },
+    "Bosnia and Herzegovina": {
+      "total_orders": 45,
+      "delayed_orders": 32,
+      "delay_rate": 0.7111,
+      "risk_score": 0.7111
+    },
+    "Botswana": {
+      "total_orders": 27,
+      "delayed_orders": 17,
+      "delay_rate": 0.6296,
+      "risk_score": 0.6296
+    },
+    "Brazil": {
+      "total_orders": 5571,
+      "delayed_orders": 4217,
+      "delay_rate": 0.757,
+      "risk_score": 0.757
+    },
+    "Bulgaria": {
+      "total_orders": 90,
+      "delayed_orders": 71,
+      "delay_rate": 0.7889,
+      "risk_score": 0.7889
+    },
+    "Burkina Faso": {
+      "total_orders": 3,
+      "delayed_orders": 3,
+      "delay_rate": 1.0,
+      "risk_score": 1.0
+    },
+    "Burundi": {
+      "total_orders": 5,
+      "delayed_orders": 3,
+      "delay_rate": 0.6,
+      "risk_score": 0.6
+    },
+    "Camboya": {
+      "total_orders": 121,
+      "delayed_orders": 91,
+      "delay_rate": 0.7521,
+      "risk_score": 0.7521
+    },
+    "Cameroon": {
+      "total_orders": 277,
+      "delayed_orders": 212,
+      "delay_rate": 0.7653,
+      "risk_score": 0.7653
+    },
+    "Canada": {
+      "total_orders": 634,
+      "delayed_orders": 481,
+      "delay_rate": 0.7587,
+      "risk_score": 0.7587
+    },
+    "Central African Republic": {
+      "total_orders": 13,
+      "delayed_orders": 9,
+      "delay_rate": 0.6923,
+      "risk_score": 0.6923
+    },
+    "Chile": {
+      "total_orders": 481,
+      "delayed_orders": 367,
+      "delay_rate": 0.763,
+      "risk_score": 0.763
+    },
+    "China": {
+      "total_orders": 4357,
+      "delayed_orders": 3326,
+      "delay_rate": 0.7634,
+      "risk_score": 0.7634
+    },
+    "Colombia": {
+      "total_orders": 1220,
+      "delayed_orders": 921,
+      "delay_rate": 0.7549,
+      "risk_score": 0.7549
+    },
+    "Costa Rica": {
+      "total_orders": 26,
+      "delayed_orders": 21,
+      "delay_rate": 0.8077,
+      "risk_score": 0.8077
+    },
+    "Croacia": {
+      "total_orders": 47,
+      "delayed_orders": 35,
+      "delay_rate": 0.7447,
+      "risk_score": 0.7447
+    },
+    "Cuba": {
+      "total_orders": 2090,
+      "delayed_orders": 1576,
+      "delay_rate": 0.7541,
+      "risk_score": 0.7541
+    },
+    "Cyprus": {
+      "total_orders": 25,
+      "delayed_orders": 17,
+      "delay_rate": 0.68,
+      "risk_score": 0.68
+    },
+    "Czech Republic": {
+      "total_orders": 59,
+      "delayed_orders": 41,
+      "delay_rate": 0.6949,
+      "risk_score": 0.6949
+    },
+    "Democratic Republic of the Congo": {
+      "total_orders": 623,
+      "delayed_orders": 446,
+      "delay_rate": 0.7159,
+      "risk_score": 0.7159
+    },
+    "Denmark": {
+      "total_orders": 244,
+      "delayed_orders": 183,
+      "delay_rate": 0.75,
+      "risk_score": 0.75
+    },
+    "Djibouti": {
+      "total_orders": 14,
+      "delayed_orders": 10,
+      "delay_rate": 0.7143,
+      "risk_score": 0.7143
+    },
+    "Dominican Republic": {
+      "total_orders": 2464,
+      "delayed_orders": 1864,
+      "delay_rate": 0.7565,
+      "risk_score": 0.7565
+    },
+    "Ecuador": {
+      "total_orders": 139,
+      "delayed_orders": 113,
+      "delay_rate": 0.8129,
+      "risk_score": 0.8129
+    },
+    "Egypt": {
+      "total_orders": 916,
+      "delayed_orders": 709,
+      "delay_rate": 0.774,
+      "risk_score": 0.774
+    },
+    "El Salvador": {
+      "total_orders": 1805,
+      "delayed_orders": 1342,
+      "delay_rate": 0.7435,
+      "risk_score": 0.7435
+    },
+    "Equatorial Guinea": {
+      "total_orders": 2,
+      "delayed_orders": 2,
+      "delay_rate": 1.0,
+      "risk_score": 1.0
+    },
+    "Eritrea": {
+      "total_orders": 25,
+      "delayed_orders": 18,
+      "delay_rate": 0.72,
+      "risk_score": 0.72
+    },
+    "Eslovenia": {
+      "total_orders": 3,
+      "delayed_orders": 3,
+      "delay_rate": 1.0,
+      "risk_score": 1.0
+    },
+    "Estonia": {
+      "total_orders": 27,
+      "delayed_orders": 23,
+      "delay_rate": 0.8519,
+      "risk_score": 0.8519
+    },
+    "Ethiopia": {
+      "total_orders": 22,
+      "delayed_orders": 16,
+      "delay_rate": 0.7273,
+      "risk_score": 0.7273
+    },
+    "Filipinas": {
+      "total_orders": 1110,
+      "delayed_orders": 848,
+      "delay_rate": 0.764,
+      "risk_score": 0.764
+    },
+    "Finland": {
+      "total_orders": 214,
+      "delayed_orders": 167,
+      "delay_rate": 0.7804,
+      "risk_score": 0.7804
+    },
+    "France": {
+      "total_orders": 10095,
+      "delayed_orders": 7606,
+      "delay_rate": 0.7534,
+      "risk_score": 0.7534
+    },
+    "French Guiana": {
+      "total_orders": 5,
+      "delayed_orders": 4,
+      "delay_rate": 0.8,
+      "risk_score": 0.8
+    },
+    "Gabon": {
+      "total_orders": 48,
+      "delayed_orders": 39,
+      "delay_rate": 0.8125,
+      "risk_score": 0.8125
+    },
+    "Georgia": {
+      "total_orders": 107,
+      "delayed_orders": 79,
+      "delay_rate": 0.7383,
+      "risk_score": 0.7383
+    },
+    "Germany": {
+      "total_orders": 5983,
+      "delayed_orders": 4554,
+      "delay_rate": 0.7612,
+      "risk_score": 0.7612
+    },
+    "Ghana": {
+      "total_orders": 95,
+      "delayed_orders": 82,
+      "delay_rate": 0.8632,
+      "risk_score": 0.8632
+    },
+    "Guadalupe": {
+      "total_orders": 33,
+      "delayed_orders": 21,
+      "delay_rate": 0.6364,
+      "risk_score": 0.6364
+    },
+    "Guatemala": {
+      "total_orders": 1987,
+      "delayed_orders": 1479,
+      "delay_rate": 0.7443,
+      "risk_score": 0.7443
+    },
+    "Guinea": {
+      "total_orders": 31,
+      "delayed_orders": 26,
+      "delay_rate": 0.8387,
+      "risk_score": 0.8387
+    },
+    "Guinea-Bissau": {
+      "total_orders": 20,
+      "delayed_orders": 17,
+      "delay_rate": 0.85,
+      "risk_score": 0.85
+    },
+    "Guyana": {
+      "total_orders": 11,
+      "delayed_orders": 8,
+      "delay_rate": 0.7273,
+      "risk_score": 0.7273
+    },
+    "Haiti": {
+      "total_orders": 233,
+      "delayed_orders": 171,
+      "delay_rate": 0.7339,
+      "risk_score": 0.7339
+    },
+    "Honduras": {
+      "total_orders": 2326,
+      "delayed_orders": 1766,
+      "delay_rate": 0.7592,
+      "risk_score": 0.7592
+    },
+    "Hong Kong": {
+      "total_orders": 34,
+      "delayed_orders": 29,
+      "delay_rate": 0.8529,
+      "risk_score": 0.8529
+    },
+    "Hungary": {
+      "total_orders": 111,
+      "delayed_orders": 89,
+      "delay_rate": 0.8018,
+      "risk_score": 0.8018
+    },
+    "India": {
+      "total_orders": 3691,
+      "delayed_orders": 2804,
+      "delay_rate": 0.7597,
+      "risk_score": 0.7597
+    },
+    "Indonesia": {
+      "total_orders": 2208,
+      "delayed_orders": 1657,
+      "delay_rate": 0.7505,
+      "risk_score": 0.7505
+    },
+    "Iran": {
+      "total_orders": 1126,
+      "delayed_orders": 854,
+      "delay_rate": 0.7584,
+      "risk_score": 0.7584
+    },
+    "Iraq": {
+      "total_orders": 372,
+      "delayed_orders": 280,
+      "delay_rate": 0.7527,
+      "risk_score": 0.7527
+    },
+    "Ireland": {
+      "total_orders": 497,
+      "delayed_orders": 362,
+      "delay_rate": 0.7284,
+      "risk_score": 0.7284
+    },
+    "Israel": {
+      "total_orders": 189,
+      "delayed_orders": 149,
+      "delay_rate": 0.7884,
+      "risk_score": 0.7884
+    },
+    "Italy": {
+      "total_orders": 4044,
+      "delayed_orders": 3076,
+      "delay_rate": 0.7606,
+      "risk_score": 0.7606
+    },
+    "Jamaica": {
+      "total_orders": 175,
+      "delayed_orders": 126,
+      "delay_rate": 0.72,
+      "risk_score": 0.72
+    },
+    "Japan": {
+      "total_orders": 685,
+      "delayed_orders": 507,
+      "delay_rate": 0.7401,
+      "risk_score": 0.7401
+    },
+    "Jordan": {
+      "total_orders": 61,
+      "delayed_orders": 45,
+      "delay_rate": 0.7377,
+      "risk_score": 0.7377
+    },
+    "Kazajist\u221a\u00d8\u00ac\u00f8\u00ac\u03a9n": {
+      "total_orders": 1,
+      "delayed_orders": 0,
+      "delay_rate": 0.0,
+      "risk_score": 0.0
+    },
+    "Kazakhstan": {
+      "total_orders": 226,
+      "delayed_orders": 177,
+      "delay_rate": 0.7832,
+      "risk_score": 0.7832
+    },
+    "Kenya": {
+      "total_orders": 182,
+      "delayed_orders": 138,
+      "delay_rate": 0.7582,
+      "risk_score": 0.7582
+    },
+    "Kuwait": {
+      "total_orders": 7,
+      "delayed_orders": 6,
+      "delay_rate": 0.8571,
+      "risk_score": 0.8571
+    },
+    "Kyrgyzstan": {
+      "total_orders": 114,
+      "delayed_orders": 84,
+      "delay_rate": 0.7368,
+      "risk_score": 0.7368
+    },
+    "Laos": {
+      "total_orders": 5,
+      "delayed_orders": 3,
+      "delay_rate": 0.6,
+      "risk_score": 0.6
+    },
+    "Lebanon": {
+      "total_orders": 45,
+      "delayed_orders": 32,
+      "delay_rate": 0.7111,
+      "risk_score": 0.7111
+    },
+    "Lesoto": {
+      "total_orders": 8,
+      "delayed_orders": 6,
+      "delay_rate": 0.75,
+      "risk_score": 0.75
+    },
+    "Liberia": {
+      "total_orders": 30,
+      "delayed_orders": 20,
+      "delay_rate": 0.6667,
+      "risk_score": 0.6667
+    },
+    "Libya": {
+      "total_orders": 67,
+      "delayed_orders": 50,
+      "delay_rate": 0.7463,
+      "risk_score": 0.7463
+    },
+    "Lithuania": {
+      "total_orders": 102,
+      "delayed_orders": 76,
+      "delay_rate": 0.7451,
+      "risk_score": 0.7451
+    },
+    "Luxembourg": {
+      "total_orders": 3,
+      "delayed_orders": 2,
+      "delay_rate": 0.6667,
+      "risk_score": 0.6667
+    },
+    "Madagascar": {
+      "total_orders": 112,
+      "delayed_orders": 88,
+      "delay_rate": 0.7857,
+      "risk_score": 0.7857
+    },
+    "Malasia": {
+      "total_orders": 417,
+      "delayed_orders": 329,
+      "delay_rate": 0.789,
+      "risk_score": 0.789
+    },
+    "Mali": {
+      "total_orders": 167,
+      "delayed_orders": 131,
+      "delay_rate": 0.7844,
+      "risk_score": 0.7844
+    },
+    "Marfil Coast": {
+      "total_orders": 214,
+      "delayed_orders": 157,
+      "delay_rate": 0.7336,
+      "risk_score": 0.7336
+    },
+    "Martinica": {
+      "total_orders": 163,
+      "delayed_orders": 117,
+      "delay_rate": 0.7178,
+      "risk_score": 0.7178
+    },
+    "Mauritania": {
+      "total_orders": 20,
+      "delayed_orders": 12,
+      "delay_rate": 0.6,
+      "risk_score": 0.6
+    },
+    "Mexico": {
+      "total_orders": 6887,
+      "delayed_orders": 5214,
+      "delay_rate": 0.7571,
+      "risk_score": 0.7571
+    },
+    "Moldova": {
+      "total_orders": 26,
+      "delayed_orders": 20,
+      "delay_rate": 0.7692,
+      "risk_score": 0.7692
+    },
+    "Mongolia": {
+      "total_orders": 79,
+      "delayed_orders": 59,
+      "delay_rate": 0.7468,
+      "risk_score": 0.7468
+    },
+    "Montenegro": {
+      "total_orders": 10,
+      "delayed_orders": 8,
+      "delay_rate": 0.8,
+      "risk_score": 0.8
+    },
+    "Morocco": {
+      "total_orders": 664,
+      "delayed_orders": 509,
+      "delay_rate": 0.7666,
+      "risk_score": 0.7666
+    },
+    "Mozambique": {
+      "total_orders": 198,
+      "delayed_orders": 146,
+      "delay_rate": 0.7374,
+      "risk_score": 0.7374
+    },
+    "Myanmar (Burma)": {
+      "total_orders": 204,
+      "delayed_orders": 152,
+      "delay_rate": 0.7451,
+      "risk_score": 0.7451
+    },
+    "Namibia": {
+      "total_orders": 18,
+      "delayed_orders": 14,
+      "delay_rate": 0.7778,
+      "risk_score": 0.7778
+    },
+    "Nepal": {
+      "total_orders": 71,
+      "delayed_orders": 54,
+      "delay_rate": 0.7606,
+      "risk_score": 0.7606
+    },
+    "Netherlands": {
+      "total_orders": 1151,
+      "delayed_orders": 862,
+      "delay_rate": 0.7489,
+      "risk_score": 0.7489
+    },
+    "New Zealand": {
+      "total_orders": 1085,
+      "delayed_orders": 832,
+      "delay_rate": 0.7668,
+      "risk_score": 0.7668
+    },
+    "Nicaragua": {
+      "total_orders": 1751,
+      "delayed_orders": 1275,
+      "delay_rate": 0.7282,
+      "risk_score": 0.7282
+    },
+    "Niger": {
+      "total_orders": 65,
+      "delayed_orders": 46,
+      "delay_rate": 0.7077,
+      "risk_score": 0.7077
+    },
+    "Nigeria": {
+      "total_orders": 1069,
+      "delayed_orders": 818,
+      "delay_rate": 0.7652,
+      "risk_score": 0.7652
+    },
+    "Norway": {
+      "total_orders": 227,
+      "delayed_orders": 161,
+      "delay_rate": 0.7093,
+      "risk_score": 0.7093
+    },
+    "Oman": {
+      "total_orders": 13,
+      "delayed_orders": 11,
+      "delay_rate": 0.8462,
+      "risk_score": 0.8462
+    },
+    "Pakistan": {
+      "total_orders": 453,
+      "delayed_orders": 340,
+      "delay_rate": 0.7506,
+      "risk_score": 0.7506
+    },
+    "Panama": {
+      "total_orders": 1027,
+      "delayed_orders": 756,
+      "delay_rate": 0.7361,
+      "risk_score": 0.7361
+    },
+    "Papua New Guinea": {
+      "total_orders": 39,
+      "delayed_orders": 28,
+      "delay_rate": 0.7179,
+      "risk_score": 0.7179
+    },
+    "Paraguay": {
+      "total_orders": 34,
+      "delayed_orders": 27,
+      "delay_rate": 0.7941,
+      "risk_score": 0.7941
+    },
+    "Peru": {
+      "total_orders": 340,
+      "delayed_orders": 256,
+      "delay_rate": 0.7529,
+      "risk_score": 0.7529
+    },
+    "Poland": {
+      "total_orders": 683,
+      "delayed_orders": 506,
+      "delay_rate": 0.7408,
+      "risk_score": 0.7408
+    },
+    "Portugal": {
+      "total_orders": 287,
+      "delayed_orders": 215,
+      "delay_rate": 0.7491,
+      "risk_score": 0.7491
+    },
+    "Qatar": {
+      "total_orders": 30,
+      "delayed_orders": 22,
+      "delay_rate": 0.7333,
+      "risk_score": 0.7333
+    },
+    "Republic of Gambia": {
+      "total_orders": 8,
+      "delayed_orders": 6,
+      "delay_rate": 0.75,
+      "risk_score": 0.75
+    },
+    "Republic of the Congo": {
+      "total_orders": 11,
+      "delayed_orders": 7,
+      "delay_rate": 0.6364,
+      "risk_score": 0.6364
+    },
+    "Romania": {
+      "total_orders": 337,
+      "delayed_orders": 244,
+      "delay_rate": 0.724,
+      "risk_score": 0.724
+    },
+    "Russia": {
+      "total_orders": 889,
+      "delayed_orders": 658,
+      "delay_rate": 0.7402,
+      "risk_score": 0.7402
+    },
+    "Rwanda": {
+      "total_orders": 63,
+      "delayed_orders": 52,
+      "delay_rate": 0.8254,
+      "risk_score": 0.8254
+    },
+    "Saudi Arabia": {
+      "total_orders": 563,
+      "delayed_orders": 423,
+      "delay_rate": 0.7513,
+      "risk_score": 0.7513
+    },
+    "Senegal": {
+      "total_orders": 129,
+      "delayed_orders": 99,
+      "delay_rate": 0.7674,
+      "risk_score": 0.7674
+    },
+    "Serbia": {
+      "total_orders": 1,
+      "delayed_orders": 1,
+      "delay_rate": 1.0,
+      "risk_score": 1.0
+    },
+    "Sierra Leone": {
+      "total_orders": 11,
+      "delayed_orders": 8,
+      "delay_rate": 0.7273,
+      "risk_score": 0.7273
+    },
+    "Singapore": {
+      "total_orders": 207,
+      "delayed_orders": 155,
+      "delay_rate": 0.7488,
+      "risk_score": 0.7488
+    },
+    "Slovakia": {
+      "total_orders": 28,
+      "delayed_orders": 21,
+      "delay_rate": 0.75,
+      "risk_score": 0.75
+    },
+    "Somalia": {
+      "total_orders": 74,
+      "delayed_orders": 52,
+      "delay_rate": 0.7027,
+      "risk_score": 0.7027
+    },
+    "South Africa": {
+      "total_orders": 835,
+      "delayed_orders": 638,
+      "delay_rate": 0.7641,
+      "risk_score": 0.7641
+    },
+    "South Korea": {
+      "total_orders": 375,
+      "delayed_orders": 282,
+      "delay_rate": 0.752,
+      "risk_score": 0.752
+    },
+    "South Sudan": {
+      "total_orders": 7,
+      "delayed_orders": 5,
+      "delay_rate": 0.7143,
+      "risk_score": 0.7143
+    },
+    "Spain": {
+      "total_orders": 2180,
+      "delayed_orders": 1660,
+      "delay_rate": 0.7615,
+      "risk_score": 0.7615
+    },
+    "Sudan": {
+      "total_orders": 154,
+      "delayed_orders": 111,
+      "delay_rate": 0.7208,
+      "risk_score": 0.7208
+    },
+    "Suriname": {
+      "total_orders": 21,
+      "delayed_orders": 15,
+      "delay_rate": 0.7143,
+      "risk_score": 0.7143
+    },
+    "Swaziland": {
+      "total_orders": 7,
+      "delayed_orders": 4,
+      "delay_rate": 0.5714,
+      "risk_score": 0.5714
+    },
+    "Sweden": {
+      "total_orders": 347,
+      "delayed_orders": 272,
+      "delay_rate": 0.7839,
+      "risk_score": 0.7839
+    },
+    "Switzerland": {
+      "total_orders": 190,
+      "delayed_orders": 152,
+      "delay_rate": 0.8,
+      "risk_score": 0.8
+    },
+    "Syria": {
+      "total_orders": 26,
+      "delayed_orders": 21,
+      "delay_rate": 0.8077,
+      "risk_score": 0.8077
+    },
+    "Taiwan": {
+      "total_orders": 44,
+      "delayed_orders": 34,
+      "delay_rate": 0.7727,
+      "risk_score": 0.7727
+    },
+    "Tajikistan": {
+      "total_orders": 17,
+      "delayed_orders": 11,
+      "delay_rate": 0.6471,
+      "risk_score": 0.6471
+    },
+    "Tanzania": {
+      "total_orders": 284,
+      "delayed_orders": 216,
+      "delay_rate": 0.7606,
+      "risk_score": 0.7606
+    },
+    "Thailand": {
+      "total_orders": 619,
+      "delayed_orders": 469,
+      "delay_rate": 0.7577,
+      "risk_score": 0.7577
+    },
+    "Togo": {
+      "total_orders": 159,
+      "delayed_orders": 124,
+      "delay_rate": 0.7799,
+      "risk_score": 0.7799
+    },
+    "Trinidad and Tobago": {
+      "total_orders": 68,
+      "delayed_orders": 54,
+      "delay_rate": 0.7941,
+      "risk_score": 0.7941
+    },
+    "Tunisia": {
+      "total_orders": 17,
+      "delayed_orders": 14,
+      "delay_rate": 0.8235,
+      "risk_score": 0.8235
+    },
+    "Turkey": {
+      "total_orders": 2425,
+      "delayed_orders": 1854,
+      "delay_rate": 0.7645,
+      "risk_score": 0.7645
+    },
+    "Turkmenistan": {
+      "total_orders": 60,
+      "delayed_orders": 48,
+      "delay_rate": 0.8,
+      "risk_score": 0.8
+    },
+    "Uganda": {
+      "total_orders": 92,
+      "delayed_orders": 69,
+      "delay_rate": 0.75,
+      "risk_score": 0.75
+    },
+    "Ukraine": {
+      "total_orders": 851,
+      "delayed_orders": 649,
+      "delay_rate": 0.7626,
+      "risk_score": 0.7626
+    },
+    "United Arab Emirates": {
+      "total_orders": 29,
+      "delayed_orders": 22,
+      "delay_rate": 0.7586,
+      "risk_score": 0.7586
+    },
+    "United Kingdom": {
+      "total_orders": 4705,
+      "delayed_orders": 3571,
+      "delay_rate": 0.759,
+      "risk_score": 0.759
+    },
+    "United States": {
+      "total_orders": 16488,
+      "delayed_orders": 12479,
+      "delay_rate": 0.7569,
+      "risk_score": 0.7569
+    },
+    "Uruguay": {
+      "total_orders": 68,
+      "delayed_orders": 56,
+      "delay_rate": 0.8235,
+      "risk_score": 0.8235
+    },
+    "Uzbekistan": {
+      "total_orders": 164,
+      "delayed_orders": 131,
+      "delay_rate": 0.7988,
+      "risk_score": 0.7988
+    },
+    "Venezuela": {
+      "total_orders": 858,
+      "delayed_orders": 671,
+      "delay_rate": 0.7821,
+      "risk_score": 0.7821
+    },
+    "Vietnam": {
+      "total_orders": 409,
+      "delayed_orders": 302,
+      "delay_rate": 0.7384,
+      "risk_score": 0.7384
+    },
+    "Western Sahara": {
+      "total_orders": 2,
+      "delayed_orders": 2,
+      "delay_rate": 1.0,
+      "risk_score": 1.0
+    },
+    "Yemen": {
+      "total_orders": 71,
+      "delayed_orders": 53,
+      "delay_rate": 0.7465,
+      "risk_score": 0.7465
+    },
+    "Zambia": {
+      "total_orders": 181,
+      "delayed_orders": 138,
+      "delay_rate": 0.7624,
+      "risk_score": 0.7624
+    },
+    "Zimbabwe": {
+      "total_orders": 152,
+      "delayed_orders": 125,
+      "delay_rate": 0.8224,
+      "risk_score": 0.8224
+    }
+  },
+  "shipping_mode_risk": {
+    "First Class": {
+      "total_orders": 23622,
+      "delayed_orders": 23622,
+      "delay_rate": 1.0,
+      "risk_score": 1.0
+    },
+    "Same Day": {
+      "total_orders": 7959,
+      "delayed_orders": 3994,
+      "delay_rate": 0.5018,
+      "risk_score": 0.0
+    },
+    "Second Class": {
+      "total_orders": 31056,
+      "delayed_orders": 24616,
+      "delay_rate": 0.7926,
+      "risk_score": 0.5837
+    },
+    "Standard Class": {
+      "total_orders": 56127,
+      "delayed_orders": 37477,
+      "delay_rate": 0.6677,
+      "risk_score": 0.333
+    }
+  },
+  "market_risk": {
+    "Africa": {
+      "total_orders": 8084,
+      "delayed_orders": 6117,
+      "delay_rate": 0.7567
+    },
+    "Europe": {
+      "total_orders": 35161,
+      "delayed_orders": 26562,
+      "delay_rate": 0.7554
+    },
+    "LATAM": {
+      "total_orders": 31492,
+      "delayed_orders": 23712,
+      "delay_rate": 0.753
+    },
+    "Pacific Asia": {
+      "total_orders": 26905,
+      "delayed_orders": 20358,
+      "delay_rate": 0.7567
+    },
+    "USCA": {
+      "total_orders": 17122,
+      "delayed_orders": 12960,
+      "delay_rate": 0.7569
+    }
+  },
+  "meta": {
+    "label_definition": "1=on-time, 2=delayed",
+    "risk_score_note": "Min-max normalised delay rate per country (0=lowest delay, 1=highest delay)"
+  }
+}

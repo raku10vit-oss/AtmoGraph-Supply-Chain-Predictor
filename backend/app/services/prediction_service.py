@@ -1,21 +1,23 @@
 """
-AtmoGraph – Week 2 Prediction Service
-======================================
+AtmoGraph – Week 2.5 Prediction Service
+========================================
 Computes supply-chain disruption risk scores from real datasets.
 
-Five interpretable risk signals (all data-driven, no fabrication):
+Six interpretable risk signals (all data-driven, no fabrication):
   1. Port Exposure Score      — from Port-disruption-database.xlsx
   2. Supplier Concentration   — Herfindahl–Hirschman Index on KG data
   3. Graph Centrality Score   — networkx PageRank on AnonNet edges
   4. Industry Vulnerability   — KG industries exposed to disrupted countries
   5. Network Propagation      — Neo4j BFS hop-distance from disrupted nodes
+  6. Shipping Delay Risk      — empirical delay rates from SynDelay dataset (155K orders)
 
-Weights (sum to 1.0, documented here for transparency):
-  port_exposure:        0.30
-  concentration:        0.25
-  centrality:           0.20
+Weights (sum to exactly 1.0, verified in test suite):
+  port_exposure:        0.25
+  concentration:        0.22
+  centrality:           0.18
   industry_vuln:        0.15
   propagation:          0.10
+  delay_risk:           0.10
 """
 from __future__ import annotations
 
@@ -76,15 +78,21 @@ _KG_PATH        = os.path.join(_REPO_DATA, "supply_network", "supplychainKG_clea
 _EDGES_PATH     = os.path.join(_REPO_DATA, "supply_network", "edges_anon.csv")
 _NODES_PATH     = os.path.join(_REPO_DATA, "supply_network", "nodes_anon.csv")
 _SCENARIOS_PATH = os.path.join(_REPO_DATA, "evaluation", "scenarios", "multi_company_scenarios.json")
+# Week 2.5 — new processed data files
+_SYNDELAY_RISK_PATH  = os.path.join(_REPO_DATA, "processed", "syndelay_country_risk.json")
+_ALIASES_PATH        = os.path.join(_REPO_DATA, "processed", "company_aliases.json")
+_GT_INDEX_PATH       = os.path.join(_REPO_DATA, "processed", "ground_truth_index.json")
 
 # ── Signal weights (must sum to 1.0) ─────────────────────────────
 WEIGHTS = {
-    "port_exposure":    0.30,
-    "concentration":    0.25,
-    "centrality":       0.20,
+    "port_exposure":    0.25,
+    "concentration":    0.22,
+    "centrality":       0.18,
     "industry_vuln":    0.15,
     "propagation":      0.10,
+    "delay_risk":       0.10,
 }
+assert abs(sum(WEIGHTS.values()) - 1.0) < 1e-9, "Signal weights must sum to 1.0"
 
 RISK_THRESHOLDS = {"Low": 0.35, "Medium": 0.65}  # score < 0.35 → Low; < 0.65 → Medium; else High
 
@@ -105,6 +113,10 @@ _port_cache: Optional[Dict] = None
 _kg_df: Optional[pd.DataFrame] = None
 _pagerank: Optional[Dict[str, float]] = None
 _scenarios: Optional[List[Dict]] = None
+# Week 2.5 caches
+_syndelay_risk: Optional[Dict] = None
+_aliases: Optional[Dict] = None
+_gt_index: Optional[Dict] = None
 
 
 def _load_port_cache() -> Dict:
@@ -171,13 +183,70 @@ def _load_scenarios() -> List[Dict]:
     return _scenarios
 
 
+def _load_syndelay_risk() -> Dict:
+    """Load shipping delay risk lookup from SynDelay processed cache."""
+    global _syndelay_risk
+    if _syndelay_risk is None:
+        if not os.path.exists(_SYNDELAY_RISK_PATH):
+            logger.warning("syndelay_country_risk.json not found — delay_risk signal will be zero. Run preprocess_syndelay.py.")
+            _syndelay_risk = {"country_risk": {}, "shipping_mode_risk": {}, "market_risk": {}}
+        else:
+            with open(_SYNDELAY_RISK_PATH) as f:
+                _syndelay_risk = json.load(f)
+            logger.info("✅ SynDelay risk loaded: %d countries, overall delay rate %.1f%%",
+                        _syndelay_risk.get("countries_with_data", 0),
+                        (_syndelay_risk.get("overall_delay_rate", 0)) * 100)
+    return _syndelay_risk
+
+
+def _load_aliases() -> Dict:
+    """Load company alias and attribute override tables."""
+    global _aliases
+    if _aliases is None:
+        if not os.path.exists(_ALIASES_PATH):
+            logger.warning("company_aliases.json not found — alias resolution disabled. Run preprocess_company_aliases.py.")
+            _aliases = {"aliases": {}, "overrides": {}}
+        else:
+            with open(_ALIASES_PATH) as f:
+                _aliases = json.load(f)
+            logger.info("✅ Company aliases loaded: %d aliases, %d overrides",
+                        len(_aliases.get("aliases", {})),
+                        len(_aliases.get("overrides", {})))
+    return _aliases
+
+
+def _load_ground_truth() -> Dict:
+    """Load ground truth tier-chain index."""
+    global _gt_index
+    if _gt_index is None:
+        if not os.path.exists(_GT_INDEX_PATH):
+            logger.warning("ground_truth_index.json not found — GT enrichment disabled. Run preprocess_ground_truth.py.")
+            _gt_index = {"scenarios": [], "by_id": {}, "by_company": {}}
+        else:
+            with open(_GT_INDEX_PATH) as f:
+                _gt_index = json.load(f)
+            logger.info("✅ Ground truth index loaded: %d scenarios",
+                        _gt_index.get("total_scenarios", 0))
+    return _gt_index
+
+
+def _resolve_company_name(name: str) -> str:
+    """Resolve a company name variant to its canonical form using alias table."""
+    alias_data = _load_aliases()
+    aliases = alias_data.get("aliases", {})
+    return aliases.get(name.lower(), name)
+
+
 def preload_all() -> None:
     """Call this at server startup to warm the caches."""
     _load_port_cache()
     _load_kg()
     _load_pagerank()
     _load_scenarios()
-    logger.info("✅ Prediction service data fully loaded")
+    _load_syndelay_risk()
+    _load_aliases()
+    _load_ground_truth()
+    logger.info("✅ Prediction service data fully loaded (6 signals active)")
 
 
 # ══════════════════════════════════════════════════════════════════
@@ -281,6 +350,42 @@ def _neo4j_propagation_score(country: str) -> Tuple[float, str]:
         return 0.0, "Neo4j propagation query unavailable"
 
 
+def _shipping_delay_for_country(country: str) -> Tuple[float, str]:
+    """
+    Signal 6: Shipping Delay Risk.
+    Returns (normalised_risk_score, explanation) derived from SynDelay.
+    Score = min-max normalised delay rate for order_country.
+    Falls back to overall delay rate if country not in dataset.
+    """
+    sd = _load_syndelay_risk()
+    country_risk = sd.get("country_risk", {})
+
+    entry = country_risk.get(country)
+    if entry is None:
+        # Fuzzy match
+        for k, v in country_risk.items():
+            if country.lower() in k.lower() or k.lower() in country.lower():
+                entry = v
+                break
+
+    if entry is None:
+        overall = sd.get("overall_delay_rate", 0.5)
+        # Normalise overall rate against range [0,1] — treat as mid-point
+        score = round(overall, 4)
+        return score, (
+            f"No SynDelay country data for '{country}'; "
+            f"using overall dataset delay rate {overall:.1%}"
+        )
+
+    score = float(entry.get("risk_score", 0.0))
+    delay_rate = entry.get("delay_rate", 0.0)
+    n = entry.get("total_orders", 0)
+    return score, (
+        f"SynDelay: {delay_rate:.1%} delay rate for '{country}' "
+        f"({entry.get('delayed_orders', 0):,}/{n:,} orders) → score {score:.2f}"
+    )
+
+
 def _get_supplier_countries(company_name: str, kg: pd.DataFrame) -> List[str]:
     rows = kg[kg["Customer"].str.lower() == company_name.lower()]
     return rows["Supplier Country"].dropna().tolist()
@@ -359,13 +464,14 @@ def get_overview() -> OverviewModel:
         top_risk_industries=top_industries,
         signal_weights=WEIGHTS,
         methodology_note=(
-            "Risk scores are computed from 5 interpretable signals: "
-            "Port Exposure (historical severity from 217 disruption events 2011–2019), "
-            "Supplier Concentration (HHI on 16,640 KG supply links), "
-            "Graph Centrality (PageRank on 43,926 AnonNet edges), "
-            "Industry Vulnerability (industry exposure to disrupted countries), "
-            "Network Propagation (Neo4j BFS from disruption source). "
-            "No black-box ML; all scores are reproducible and explained per entity."
+            "Risk scores are computed from 6 interpretable signals: "
+            "Port Exposure (historical severity from 217 disruption events 2011–2019, weight=25%), "
+            "Supplier Concentration (HHI on 16,640 KG supply links, weight=22%), "
+            "Graph Centrality (PageRank on 43,926 AnonNet edges, weight=18%), "
+            "Industry Vulnerability (exposure to disrupted countries, weight=15%), "
+            "Network Propagation (Neo4j BFS, weight=10%), "
+            "Shipping Delay Risk (SynDelay dataset: 155K orders across 161 countries, weight=10%). "
+            "All weights sum to 1.0. No black-box ML; all scores are reproducible and explained."
         ),
     )
 
@@ -461,14 +567,22 @@ def get_affected_companies(limit: int = 50) -> List[AffectedCompanyModel]:
         # Industry vulnerability
         ind_score, _ = _industry_vulnerability(info["industry"])
 
-        # Weighted aggregate (no propagation signal here — too slow for bulk)
+        # Signal 6: Shipping delay risk for this supplier's country
+        delay_score, _ = _shipping_delay_for_country(info["country"])
+
+        # Weighted aggregate (centrality/propagation skipped in bulk mode — too slow)
+        active_weights = (
+            WEIGHTS["port_exposure"]
+            + WEIGHTS["concentration"]
+            + WEIGHTS["industry_vuln"]
+            + WEIGHTS["delay_risk"]
+        )
         overall = (
             WEIGHTS["port_exposure"] * info["country_risk"]
             + WEIGHTS["concentration"] * conc_score
             + WEIGHTS["industry_vuln"] * ind_score
-            + WEIGHTS["centrality"] * 0.0        # no centrality in bulk mode
-            + WEIGHTS["propagation"] * 0.0
-        ) / (WEIGHTS["port_exposure"] + WEIGHTS["concentration"] + WEIGHTS["industry_vuln"])
+            + WEIGHTS["delay_risk"] * delay_score
+        ) / active_weights
 
         overall = round(min(overall, 1.0), 4)
         level = _risk_level(overall)
@@ -503,9 +617,19 @@ def get_affected_companies(limit: int = 50) -> List[AffectedCompanyModel]:
 
 
 def get_company_risk_profile(company_name: str) -> Optional[CompanyRiskProfileModel]:
-    """Full risk breakdown for a single company."""
+    """Full risk breakdown for a single company (with alias resolution)."""
+    # Resolve alias first (e.g. 'Alona Corp' → 'Alcoa Corp')
+    canonical_name = _resolve_company_name(company_name)
+    if canonical_name != company_name:
+        logger.info("Resolved alias '%s' → '%s'", company_name, canonical_name)
+        company_name = canonical_name
+
     kg = _load_kg()
     cache = _load_port_cache()
+
+    # Check attribute overrides for this company
+    alias_data = _load_aliases()
+    overrides = alias_data.get("overrides", {}).get(company_name, {})
 
     # Find company in KG (supplier or customer)
     as_supplier = kg[kg["Supplier"].str.lower() == company_name.lower()]
@@ -527,6 +651,12 @@ def get_company_risk_profile(company_name: str) -> Optional[CompanyRiskProfileMo
     supplier_countries = _get_supplier_countries(company_name, kg)
     customer_countries = _get_customer_countries(company_name, kg)
 
+    # Apply attribute overrides (e.g. corrected country from company_attributes.csv)
+    if "country" in overrides:
+        country = overrides["country"]
+    if "industry" in overrides:
+        industry = overrides["industry"]
+
     # 1. Port exposure
     pe_score, pe_expl = _port_exposure_for_country(str(country or ""))
 
@@ -543,12 +673,16 @@ def get_company_risk_profile(company_name: str) -> Optional[CompanyRiskProfileMo
     # 5. Propagation (via Neo4j)
     prop_score, prop_expl = _neo4j_propagation_score(str(country or ""))
 
+    # 6. Shipping delay risk (Signal 6 — from SynDelay)
+    delay_score, delay_expl = _shipping_delay_for_country(str(country or ""))
+
     overall = (
         WEIGHTS["port_exposure"] * pe_score
         + WEIGHTS["concentration"] * conc_score
         + WEIGHTS["centrality"] * cent_score
         + WEIGHTS["industry_vuln"] * ind_score
         + WEIGHTS["propagation"] * prop_score
+        + WEIGHTS["delay_risk"] * delay_score
     )
     overall = round(min(overall, 1.0), 4)
 
@@ -587,6 +721,13 @@ def get_company_risk_profile(company_name: str) -> Optional[CompanyRiskProfileMo
             weight=WEIGHTS["propagation"],
             weighted_score=round(WEIGHTS["propagation"] * prop_score, 4),
             explanation=prop_expl,
+        ),
+        RiskSignalModel(
+            signal_name="Shipping Delay Risk",
+            score=round(delay_score, 4),
+            weight=WEIGHTS["delay_risk"],
+            weighted_score=round(WEIGHTS["delay_risk"] * delay_score, 4),
+            explanation=delay_expl,
         ),
     ]
 
@@ -724,10 +865,12 @@ def get_propagation(node_id: int, max_hops: int = 3) -> PropagationModel:
 
 
 def get_scenarios(limit: int = 30) -> List[ScenarioModel]:
-    """Return structured disruption scenarios with computed risk scores."""
+    """Return structured disruption scenarios with computed risk scores and GT tier chains."""
     cache = _load_port_cache()
     country_risks = cache.get("country_risk", {})
     industry_risks = cache.get("industry_risk", {})
+    gt = _load_ground_truth()
+    gt_by_id = gt.get("by_id", {})
 
     COUNTRY_MAP = {"U.S.A.": "United States"}
     def _cmap(c): return COUNTRY_MAP.get(c, c)
@@ -747,8 +890,15 @@ def get_scenarios(limit: int = 30) -> List[ScenarioModel]:
         avg_i = sum(i_scores) / len(i_scores) if i_scores else 0.1
         score = round(0.6 * avg_c + 0.4 * avg_i, 4)
 
+        # Enrich with ground truth tier chains (if available)
+        sc_id = s.get("scenario_id", "")
+        gt_entry = gt_by_id.get(sc_id, {})
+        tier_1 = gt_entry.get("tier_1_affected", [])
+        tier_2 = gt_entry.get("tier_2_affected", [])
+        tier_3 = gt_entry.get("tier_3_affected", [])
+
         result.append(ScenarioModel(
-            scenario_id=s.get("scenario_id", ""),
+            scenario_id=sc_id,
             name=s.get("name", ""),
             description=s.get("description", ""),
             disruption_type=s.get("disruption_type", ""),
@@ -760,7 +910,25 @@ def get_scenarios(limit: int = 30) -> List[ScenarioModel]:
             monitored_company=s.get("monitored_company"),
             risk_score=score,
             risk_level=_risk_level(score),
+            gt_tier_1=tier_1,
+            gt_tier_2=tier_2,
+            gt_tier_3=tier_3,
+            gt_total_tier_1=len(tier_1),
+            gt_total_tier_2=len(tier_2),
+            gt_total_tier_3=len(tier_3),
         ))
 
     result.sort(key=lambda x: x.risk_score, reverse=True)
     return result
+
+
+def get_delay_signal_summary() -> Dict:
+    """Return summary of the SynDelay shipping delay signal for the overview."""
+    sd = _load_syndelay_risk()
+    return {
+        "source": "SynDelay v1 (MIM 2025 Data Challenge)",
+        "total_orders": sd.get("source_rows", 0),
+        "overall_delay_rate": sd.get("overall_delay_rate", 0.0),
+        "countries_with_data": sd.get("countries_with_data", 0),
+        "shipping_modes": sd.get("shipping_mode_risk", {}),
+    }

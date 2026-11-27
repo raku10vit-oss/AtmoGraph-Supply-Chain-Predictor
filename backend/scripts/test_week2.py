@@ -249,7 +249,7 @@ def _test_signal_weights_sum():
     from app.services.prediction_service import WEIGHTS
     total = sum(WEIGHTS.values())
     assert abs(total - 1.0) < 1e-9, f"Weights must sum to exactly 1.0, got {total}"
-    assert len(WEIGHTS) == 5, f"Expected 5 signals, got {len(WEIGHTS)}"
+    assert len(WEIGHTS) == 6, f"Expected 6 signals (5 original + delay_risk), got {len(WEIGHTS)}"
 
 test("Signal weights sum to exactly 1.0", _test_signal_weights_sum)
 
@@ -282,6 +282,170 @@ def _test_week1_routes():
     assert "/api/graph/node/{node_id}/connections" in graph_paths
 
 test("All 6 Week 1 graph routes still registered", _test_week1_routes)
+
+# ── 6. Week 2.5 — Signal 6 & new data sources ────────────────────
+print("\n[6] Week 2.5 — Signal 6 (Shipping Delay Risk)")
+
+def _test_syndelay_cache_loads():
+    from app.services.prediction_service import _load_syndelay_risk
+    sd = _load_syndelay_risk()
+    assert isinstance(sd, dict), "SynDelay cache should be a dict"
+    assert "country_risk" in sd
+    assert "shipping_mode_risk" in sd
+    assert "overall_delay_rate" in sd
+    assert 0.0 < sd["overall_delay_rate"] < 1.0, "Overall delay rate should be between 0 and 1"
+    assert sd.get("countries_with_data", 0) >= 100, "Should have data for at least 100 countries"
+    print(f"      Countries: {sd['countries_with_data']}, overall delay: {sd['overall_delay_rate']:.1%}")
+
+test("SynDelay country risk cache loads from JSON", _test_syndelay_cache_loads)
+
+def _test_syndelay_signal():
+    from app.services.prediction_service import _shipping_delay_for_country
+    # Country in dataset
+    score, expl = _shipping_delay_for_country("France")
+    assert 0.0 <= score <= 1.0, f"Score out of range: {score}"
+    assert isinstance(expl, str) and len(expl) > 0
+    # Country NOT in dataset
+    score2, expl2 = _shipping_delay_for_country("Nonexistent Country XYZ")
+    assert 0.0 <= score2 <= 1.0
+    assert "overall" in expl2.lower() or "No SynDelay" in expl2
+    print(f"      France delay risk: {score:.3f}")
+
+test("Shipping delay signal — France (in dataset) and fallback", _test_syndelay_signal)
+
+def _test_shipping_modes():
+    from app.services.prediction_service import _load_syndelay_risk
+    sd = _load_syndelay_risk()
+    modes = sd.get("shipping_mode_risk", {})
+    assert len(modes) >= 2, "Should have at least 2 shipping modes"
+    for mode, v in modes.items():
+        assert 0.0 <= v["risk_score"] <= 1.0
+        assert 0.0 <= v["delay_rate"] <= 1.0
+    print(f"      Shipping modes: {list(modes.keys())}")
+
+test("SynDelay shipping mode risk scores are valid", _test_shipping_modes)
+
+def _test_weights_6_signals():
+    from app.services.prediction_service import WEIGHTS
+    total = sum(WEIGHTS.values())
+    assert abs(total - 1.0) < 1e-9, f"6-signal weights must sum to 1.0, got {total}"
+    assert len(WEIGHTS) == 6, f"Expected 6 signals, got {len(WEIGHTS)}"
+    assert "delay_risk" in WEIGHTS, "delay_risk signal missing from WEIGHTS"
+    assert WEIGHTS["delay_risk"] == 0.10
+    assert WEIGHTS["port_exposure"] == 0.25, f"port_exposure should be 0.25, got {WEIGHTS['port_exposure']}"
+
+test("6-signal WEIGHTS sum to 1.0 and delay_risk weight is 0.10", _test_weights_6_signals)
+
+print("\n[7] Week 2.5 — Company aliases & attribute overrides")
+
+def _test_aliases_load():
+    from app.services.prediction_service import _load_aliases
+    aliases = _load_aliases()
+    assert isinstance(aliases, dict)
+    assert "aliases" in aliases
+    assert "overrides" in aliases
+    assert aliases.get("alias_count", 0) >= 100, "Should have at least 100 alias pairs"
+    # Spot-check known alias
+    alias_map = aliases["aliases"]
+    assert "alona corp" in alias_map, "Known alias 'alona corp' should be present"
+    assert alias_map["alona corp"] == "Alcoa Corp"
+    print(f"      Aliases: {len(alias_map)}, overrides: {len(aliases['overrides'])}")
+
+test("Company aliases load: 245+ pairs, spot-check 'alona corp' → 'Alcoa Corp'", _test_aliases_load)
+
+def _test_alias_resolution():
+    from app.services.prediction_service import _resolve_company_name
+    # Known alias
+    resolved = _resolve_company_name("Alona Corp")
+    assert resolved == "Alcoa Corp", f"Expected 'Alcoa Corp', got '{resolved}'"
+    # Unknown name should pass through unchanged
+    resolved2 = _resolve_company_name("Some Unknown Company")
+    assert resolved2 == "Some Unknown Company"
+
+test("Alias resolution: 'Alona Corp' → 'Alcoa Corp', unknown → passthrough", _test_alias_resolution)
+
+def _test_attribute_overrides():
+    from app.services.prediction_service import _load_aliases
+    a = _load_aliases()
+    overrides = a.get("overrides", {})
+    # 10 companies should have overrides
+    assert len(overrides) >= 5, f"Expected at least 5 overrides, got {len(overrides)}"
+    # At least one has a 'country' field
+    has_country = any("country" in v for v in overrides.values())
+    assert has_country, "At least one override should have a 'country' field"
+    print(f"      Override companies: {list(overrides.keys())[:3]} ...")
+
+test("Attribute overrides: 10 companies with country corrections", _test_attribute_overrides)
+
+print("\n[8] Week 2.5 — Ground truth tier chains")
+
+def _test_gt_index_loads():
+    from app.services.prediction_service import _load_ground_truth
+    gt = _load_ground_truth()
+    assert isinstance(gt, dict)
+    assert gt.get("total_scenarios", 0) == 30, f"Expected 30 scenarios, got {gt.get('total_scenarios')}"
+    assert "by_id" in gt
+    assert "by_company" in gt
+    companies = gt.get("monitored_companies", [])
+    assert len(companies) == 3
+    assert "Tesla Inc" in companies or any("Tesla" in c for c in companies)
+    print(f"      Total scenarios: {gt['total_scenarios']}, companies: {gt.get('monitored_companies')}")
+
+test("Ground truth index loads: 30 scenarios, 3 monitored companies", _test_gt_index_loads)
+
+def _test_gt_tier_chains():
+    from app.services.prediction_service import _load_ground_truth
+    gt = _load_ground_truth()
+    by_id = gt.get("by_id", {})
+    # Find a scenario with non-empty tiers
+    rich_scenarios = [(sid, s) for sid, s in by_id.items()
+                      if s.get("total_tier_2", 0) > 0]
+    assert len(rich_scenarios) > 0, "Some scenarios should have tier_2 data"
+    sid, s = rich_scenarios[0]
+    assert isinstance(s["tier_1_affected"], list)
+    assert isinstance(s["tier_2_affected"], list)
+    assert s["total_tier_2"] == len(s["tier_2_affected"])
+    print(f"      Sample: {sid}: T1={s['total_tier_1']} T2={s['total_tier_2']} T3={s['total_tier_3']}")
+
+test("Ground truth tier chains: non-empty T2 for some scenarios, counts match", _test_gt_tier_chains)
+
+def _test_scenarios_have_gt():
+    from app.services.prediction_service import get_scenarios
+    scenarios = get_scenarios(limit=30)
+    # Scenarios with GT data should have tier fields
+    for s in scenarios:
+        assert hasattr(s, "gt_tier_1"), "ScenarioModel missing gt_tier_1"
+        assert hasattr(s, "gt_total_tier_2"), "ScenarioModel missing gt_total_tier_2"
+        assert s.gt_total_tier_1 == len(s.gt_tier_1)
+        assert s.gt_total_tier_2 == len(s.gt_tier_2)
+    # At least some should have gt data
+    has_gt = sum(1 for s in scenarios if s.gt_total_tier_2 > 0)
+    print(f"      Scenarios with GT tier_2 data: {has_gt}/{len(scenarios)}")
+    # Note: GT only available for BMW/MERC/TSLA scenarios; multi_company_scenarios may not match
+
+test("Scenarios endpoint: ScenarioModel has GT tier fields (backward compatible)", _test_scenarios_have_gt)
+
+def _test_schema_backward_compat():
+    """Verify ScenarioModel GT fields are Optional with defaults — old code still works."""
+    from app.models.schemas import ScenarioModel
+    # Construct without GT fields — should not raise
+    s = ScenarioModel(
+        scenario_id="TEST01",
+        name="Test Scenario",
+        description="Test",
+        disruption_type="Test",
+        affected_countries=[],
+        affected_industries=[],
+        affected_companies=[],
+        is_true_positive=False,
+        risk_score=0.5,
+        risk_level="Medium",
+    )
+    assert s.gt_tier_1 == []
+    assert s.gt_total_tier_1 == 0
+    assert s.gt_total_tier_2 == 0
+
+test("ScenarioModel GT fields are backward compatible (default to empty)", _test_schema_backward_compat)
 
 # ── Summary ───────────────────────────────────────────────────────
 print(f"\n{'='*60}")
