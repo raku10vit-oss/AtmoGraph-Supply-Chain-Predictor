@@ -152,6 +152,40 @@ Open http://localhost:5173 in your browser.
 
 ---
 
+## 💻 Local Development Setup
+
+A quick-reference guide for running the full stack locally after completing the initial setup above.
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The frontend dev server starts at **http://localhost:5173** with hot-module replacement enabled.
+
+### Backend
+
+```bash
+cd backend
+pip3 install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+The API server starts at **http://localhost:8000**. Interactive API documentation is available at **http://localhost:8000/docs**.
+
+### Database (Neo4j)
+
+AtmoGraph uses **Neo4j** as its graph database engine for all supply chain relationship storage and traversal. Neo4j must be running and correctly configured before starting the backend.
+
+- **Connection settings** are read from `backend/.env` (copy from `.env.example` and fill in your credentials).
+- **Graph endpoints** (`/api/graph/*`) and the **prediction engine** will return degraded responses or errors if Neo4j is unreachable.
+- Refer to [Step 1 in Quick Start](#-quick-start) for Neo4j installation options (Desktop or Aura Free).
+
+---
+
 ## 📡 API Endpoints
 
 | Method | Endpoint | Description |
