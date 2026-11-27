@@ -75,10 +75,43 @@ These factors are combined to calculate an overall supply chain risk score.
 
 The approach helps identify companies that may be vulnerable to disruptions in connected parts of the supply chain.
 
-## 8. Conclusion
+## 8. Testing and Validation
 
-AtmoGraph aims to improve supply chain risk analysis by combining graph database technology, backend APIs, graph analysis and interactive visualisation.
+Testing and validation are important parts of the AtmoGraph project to ensure that the system components work as expected.
 
-The project provides a structured way to understand supply chain connections and investigate how disruptions may affect connected businesses.
+The project includes a Week 2 integration test script named `test_week2.py`, containing 17 test cases according to the system architecture documentation.
 
-*Note: This is an initial project report draft and will be expanded after reviewing the complete implementation and testing results.*
+### 8.1 Testing Areas
+
+The following areas are important for validating the system:
+
+1. **Database Connectivity:** Verify the connection between the application and Neo4j.
+2. **Graph Data Validation:** Check whether company nodes and supplier relationships are available.
+3. **API Testing:** Verify that backend API endpoints return the expected responses.
+4. **Risk Score Validation:** Check whether the weighted risk-scoring methodology produces scores within the expected range of 0 to 1.
+5. **Disruption Analysis:** Verify the identification of affected companies and connected supply-chain entities.
+6. **Frontend Validation:** Check whether the dashboard displays graph information and prediction results correctly.
+
+### 8.2 Expected Outcomes
+
+- Successful communication between the backend and Neo4j database.
+- Correct retrieval of graph information.
+- Valid API responses.
+- Risk scores within the defined range.
+- Proper display of disruption information on the dashboard.
+
+### 8.3 Validation Status
+
+Actual test execution results, including passed tests, failed tests and observations, should be recorded after running the test suite.
+
+No test results are assumed in this section.
+
+## 9. Conclusion
+
+AtmoGraph – Supply Chain Ripple Effect Predictor aims to provide an intelligent approach to identifying and analysing supply chain disruptions. By combining graph database technology, Python-based data processing, graph analysis and interactive visualisation, the system helps understand how a disruption in one part of the supply chain can affect other connected businesses.
+
+The project uses Neo4j to represent relationships between companies and suppliers, while graph analytics and weighted risk-scoring techniques help identify potentially vulnerable entities. The backend and frontend components provide a way to process, access and visualise supply chain information.
+
+Through this project, we gained an understanding of graph databases, supply chain networks, risk analysis, API integration and system architecture.
+
+Overall, AtmoGraph demonstrates how data-driven technologies can support better supply chain risk assessment and decision-making. Future improvements can include advanced machine learning models, real-time news analysis and more accurate disruption predictions.
